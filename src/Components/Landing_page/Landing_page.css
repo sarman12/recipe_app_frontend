@@ -29,6 +29,7 @@
     padding: 1rem 2rem;
     box-shadow: 1px 1px 20px 2px rgb(107, 106, 106);
     z-index: 100;
+    transition: background-color 0.3s ease;
 }
 
 .Landing_page_nav.Dark {
@@ -234,12 +235,14 @@
     height: 100%;
     background-color: black;
     color: white;
-    display: none;
+    display: flex;
     flex-direction: row;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
 }
 
 .Landing_page_information_show {
-    display: flex;
+    transform: translateX(0);
 }
 
 .contact_form {
