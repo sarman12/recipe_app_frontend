@@ -192,6 +192,12 @@ function Landing_page() {
       </div>
 
 
+      <div className="newsletter">
+      
+
+      </div>
+
+
       <BsList className="special_menu" onClick={togglenav}/>
 
     </div>

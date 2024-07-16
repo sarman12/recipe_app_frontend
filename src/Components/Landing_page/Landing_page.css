@@ -103,7 +103,7 @@ body{
 
 .search .fa.Dark {
     color: #FAFAFA;
-    background-color: #333;
+    background-color: #201e20;
     border: 1px #FAFAFA solid;
 }
 
@@ -142,7 +142,7 @@ body{
 .dropdown-content.Dark {
     background-color: #1F1F1F;
     color: #FAFAFA;
-    border: 1px #333 solid;
+    border: 1px #201e20 solid;
 }
 
 .overlay {
@@ -168,7 +168,7 @@ body{
 }
 
 .overlay.Dark {
-    background: #201e20
+    background: #201e20;
 
 ;
 }
