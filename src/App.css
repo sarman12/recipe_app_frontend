@@ -17,6 +17,7 @@ footer{
   display: flex;
   flex-direction: column;
   padding:3rem;
+  padding-bottom: 0rem;
 }
 .footer_container{
   /* border: 2px red solid; */
@@ -72,4 +73,12 @@ footer .footer_container ul li:hover {
 
 
 
+}
+.footer_copywrite{
+  /* border: 1px solid red; */
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  background: #FA2742;
+  color: #FAFAFA;
 }

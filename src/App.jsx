@@ -56,8 +56,7 @@ function App() {
           {/* <h1>Food Hunt</h1> */}
         </div>
         <div className="footer_copywrite">
-          
-
+          © 2024 Food Hunt Pvt Ltd. All Right Reserved
         </div>
 
       </footer>
