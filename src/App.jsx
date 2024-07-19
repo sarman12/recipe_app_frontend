@@ -6,6 +6,7 @@ import { FaFacebook, FaGithub, FaSearch } from 'react-icons/fa';
 import { ImInstagram } from 'react-icons/im';
 import { MdClose } from 'react-icons/md';
 import { BiMoon, BiSun, BiCart, BiUser } from 'react-icons/bi';
+import Cuisine from './Components/Cuisine/Cuisine';
 
 function App() {
   const [visible, setVisible] = useState(false);
@@ -72,7 +73,8 @@ function App() {
         </div>
       </div>
 
-      <Landing_page />
+      {/* <Landing_page /> */}
+      <Cuisine/>
 
       <footer>
         <div className="footer_container">
