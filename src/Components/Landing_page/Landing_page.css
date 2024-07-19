@@ -15,9 +15,10 @@ body{
 /* Container */
 .Dark {
     color: #FAFAFA;
-    background-color: #201e20
+    background-color: #201e20;
+}
 
-;
+/*
 }
 
 .Landing_page_container {
@@ -41,7 +42,6 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    /* box-shadow: 1px 1px 5px 2px #ddd; */
     z-index: 100;
     transition: background-color 0.3s ease;
 }
@@ -219,7 +219,7 @@ body{
 ;
     cursor: pointer;
     transition: color 0.3s ease;
-}
+} */
 
 /* Landing Page Body */
 .Landing_page_body {
