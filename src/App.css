@@ -228,6 +228,20 @@ p{
   font-size: 1rem;
 }
 
+.footer_social {
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+.footer_copywrite {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  background: #FA2742;
+  color: #FAFAFA;
+}
+
 footer{
   background-color: #FAFAFA;
   /* border: 2px red solid; */
@@ -238,29 +252,40 @@ footer{
 }
 .footer_container{
   /* border: 2px red solid; */
+  display: flex;
+}
+.footer_container div img{
+  width:20rem;
+  height: 20rem;
+  /* margin-left: 10rem; */
+  opacity: 0.7;
+  position: sticky;
+
+}
+.navigation_container{
+  /* border: 2px red solid; */
   padding:1rem;
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  margin-left: 80vh;
-  margin: right;
+  margin-left: 30vh;
 
 }
-.footer_container div{
+.navigation_container div{
   margin: auto;
   margin-top: 0;
 }
-footer .footer_container ul{
+footer .navigation_container ul{
   list-style-type: style disc;;
   padding:1rem;
 }
-footer .footer_container ul li{
+footer .navigation_container ul li{
   padding:0.3rem;
   font-size: 1.15rem;
   font-weight: 700;
   color: #201e20;
   cursor: pointer;
 }
-footer .footer_container ul li:hover {
+footer .navigation_container ul li:hover {
   color: #FA2742;
 }
 
