@@ -7,7 +7,7 @@ import { ImInstagram } from 'react-icons/im';
 import { MdClose } from 'react-icons/md';
 import { BiMoon, BiSun, BiCart, BiUser } from 'react-icons/bi';
 import Cuisine from './Components/Cuisine/Cuisine';
-import Logo from './assets/logo.svg'; // Adjust path if necessary
+import Logo from './assets/FoodHunt Logo.jpg'; // Adjust path if necessary
 
 function App() {
   const [visible, setVisible] = useState(false);
@@ -80,38 +80,40 @@ function App() {
       {/* <Landing_page /> */}
       <Cuisine />
 
-      <footer>
-        <div className="footer_container">
-          <div className="logo-container">
-            <img src={Logo} alt="Food Hunt Logo" className="footer-logo" />
-          </div>
-          <div className="navigation_container">
-            {footerSections.map((section, index) => (
-              <div key={index} className="footer_content">
-                <ul>
-                  {section.map(item => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+        <footer>
+            <div className="footer_container">
+              <div>
+                <img src={Logo} alt="Food Hunt Logo" />
               </div>
-            ))}
-          </div>
-        </div>
+              <div className="navigation_container">
+                {footerSections.map((section, index) => (
+                  <div key={index} className="footer_content">
+                    <ul>
+                      {section.map(item => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-        <div className="footer_social">
-          <h2>Connect With Us</h2>
-          <div>
-            <BsLinkedin className="fa" />
-            <FaFacebook className="fa" />
-            <FaGithub className="fa" />
-            <BsTwitter className="fa" />
-            <ImInstagram className="fa" />
-          </div>
-        </div>
-        <div className="footer_copywrite">
-          © 2024 Food Hunt Pvt Ltd. All Rights Reserved
-        </div>
-      </footer>
+            <div className="footer_social">
+              <h2>Connect With Us</h2>
+              <div>
+                <BsLinkedin className="fa" />
+                <FaFacebook className="fa" />
+                <FaGithub className="fa" />
+                <BsTwitter className="fa" />
+                <ImInstagram className="fa" />
+              </div>
+            </div>
+            <div className="footer_copywrite">
+              © 2024 Food Hunt Pvt Ltd. All Rights Reserved
+            </div>
+        </footer>
+
+
     </div>
   );
 }
