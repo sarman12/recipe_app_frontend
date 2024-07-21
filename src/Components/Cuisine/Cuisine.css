@@ -4,9 +4,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 
-h2 {
+.cuisine a {
     font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+    font-weight: 500;
 }
 
 .cuisines {
@@ -19,7 +24,7 @@ h2 {
 }
 
 .cuisines h1 {
-    font-size: 2.5rem;
+    font-size: 2.9rem;
     color: #333;
     margin-bottom: 1rem;
     text-align: center;
@@ -40,8 +45,8 @@ h2 {
 }
 
 .cuisine {
-    margin-bottom: 1rem;
-    padding: 1rem;
+    margin-bottom: 5rem;
+    padding: 0.5rem;
     text-align: left;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -50,15 +55,11 @@ h2 {
     animation: slideIn 1s forwards;
 }
 
-.cuisine h2 {
-    font-size: 2rem;
-    color: #444;
-    margin-bottom: 1rem;
-}
 
 .cuisine p {
     font-size: 1rem;
     color: #666;
+    margin-top: 1rem;
     margin-bottom: 1.5rem;
 }
 
@@ -66,6 +67,7 @@ h2 {
     margin-top: 1rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    /* gap: 1rem; */
 }
 
 .cuisine_image {
@@ -81,14 +83,14 @@ h2 {
 }
 
 .cuisine_image:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     filter: grayscale(100%);
 }
 
 .cuisine_image p {
     position: absolute;
     top: -100%;
-    left: 0;
+    left: 0%;
     height: auto;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
@@ -103,6 +105,23 @@ h2 {
 
 .cuisine_image:hover p {
     top: 0%;
+}
+
+.cuisine_images .fa {
+    color: #FFF;
+    font-size: 2.5rem;
+    background-color: #444;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0 0 0 5px;
+    position: absolute;
+    bottom: 5px;
+    right: -1px;
+    transition: background-color 0.3s ease;
+    opacity: 0.9;
+}
+
+.cuisine_images .fa:hover {
+    background-color: #666;
 }
 
 @keyframes slideIn {

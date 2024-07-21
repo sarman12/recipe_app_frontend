@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import Landing_page from './Components/Landing_page/Landing_page'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LandingPage from './Components/Landing_page/Landing_page';
 import Cuisine from './Components/Cuisine/Cuisine';
 import Footer from './Components/Footer/Footer';
 import Navbar from './Components/Navbar/Navbar';
@@ -20,16 +21,22 @@ function App() {
   const togglenav = () => setActive(!active);
 
   return (
-    <div>
-       <Navbar 
+    <Router>
+      <Navbar 
         toggle={toggle} 
         toggleMode={toggleMode} 
         visible={visible} 
         toggleOverlay={toggleOverlay}
       />
-       {/* <Landing_page /> */}
-      <Cuisine />
-      <Footer /> 
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/cuisine" element={<Cuisine />} />
+        {/* <Route path="/seasonal" element={<Seasonal />} /> */}
+        {/* <Route path="/seafood" element={<Seafood />} /> */}
+        {/* <Route path="/vegan" element={<Vegan />} /> */}
+
+      </Routes>
+      <Footer />
 
       <div className={`Landing_page_information ${active ? 'Landing_page_information_show' : ''}`}>
         <div className="contact_form">
@@ -60,7 +67,7 @@ function App() {
       </div>
 
       <BsList className="special_menu" onClick={togglenav}/>
-    </div>
+    </Router>
   );
 }
 

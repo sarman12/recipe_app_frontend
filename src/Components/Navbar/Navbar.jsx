@@ -1,17 +1,19 @@
+// src/components/Navbar.jsx
 import React from 'react';
 import './Navbar.css';
 import { FaSearch } from 'react-icons/fa';
 import { MdClose } from 'react-icons/md';
 import { BiMoon, BiSun, BiCart, BiUser } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
 function Navbar({ toggle, toggleMode, visible, toggleOverlay }) {
   const navItems = [
-    { label: 'Trending', options: ['Top 10', 'Top 20', 'Top 30'] },
-    { label: 'Cuisines', options: ['Indian', 'Mexican', 'Canadian', 'Italian', 'Chinese', 'French'] },
-    { label: 'Seasonal', options: ['Summer', 'Winter', 'Spring', 'Rainy'] },
-    { label: 'Seafood', options: ['Shrimp', 'Crab', 'Lobster'] },
-    { label: 'Vegan', options: ['Salad', 'Soup', 'Sandwich'] },
-    { label: 'Non-vegetarian', options: ['Chicken', 'Beef', 'Pork'] },
+    { label: 'Trending', options: ['Top 10', 'Top 20', 'Top 30'],link: '/trending' },
+    { label: 'Cuisines', options: ['Indian', 'Chinese', 'Italian', 'Mexican', 'Japanese'], link: '/cuisine' },
+    { label: 'Seasonal', options: ['Summer', 'Winter', 'Spring', 'Rainy'],link: '/seasonal' },
+    { label: 'Seafood', options: ['Shrimp', 'Crab', 'Lobster'] ,link:'./seafood' },
+    { label: 'Vegan', options: ['Salad', 'Soup', 'Sandwich'],link: '/vegan' },
+    { label: 'Non-vegetarian', options: ['Chicken', 'Beef', 'Pork'],link: '/nonvegetarian' },
   ];
 
   return (
@@ -21,11 +23,17 @@ function Navbar({ toggle, toggleMode, visible, toggleOverlay }) {
         <ul>
           {navItems.map(item => (
             <li key={item.label}>
-              {item.label}
+              {item.link ? (
+                <Link to={item.link}>{item.label}</Link>
+              ) : (
+                item.label
+              )}
               <div className={`dropdown-content ${toggle ? 'Dark' : ''}`}>
                 <ul>
                   {item.options.map(option => (
-                    <li key={option}>{option}</li>
+                    <li key={option}>
+                      <Link to={`/cuisine#${option.toLowerCase()}`}>{option}</Link>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -37,11 +45,6 @@ function Navbar({ toggle, toggleMode, visible, toggleOverlay }) {
             <MdClose className="fa" onClick={toggleOverlay} />
           ) : (
             <FaSearch className="fa" onClick={toggleOverlay} />
-          )}
-          {toggle ? (
-            <BiMoon className="fa" onClick={toggleMode} />
-          ) : (
-            <BiSun className="fa" onClick={toggleMode} />
           )}
           <BiCart className="fa" />
           <BiUser className="fa" />

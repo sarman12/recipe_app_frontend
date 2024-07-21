@@ -57,9 +57,11 @@
     justify-content: space-between;
     gap: 1.5rem;
     list-style: none;
+    
 }
 
 .Landing_page_nav ul li {
+    text-decoration: none;
     position: relative;
     color: #333;
     font-size: 1.15rem;
@@ -67,6 +69,10 @@
     align-items: center;
     cursor: pointer;
     transition: color 0.3s ease;
+}
+.Landing_page_nav ul li a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .Landing_page_nav ul li:hover {
@@ -117,15 +123,14 @@
     padding: 0rem;
     margin: 0;
 }
+.dropdown-content ul li a {
 
-.dropdown-content ul li {
     padding: 0.5rem;
     cursor: pointer;
 }
 
-.dropdown-content ul li:hover {
-    background-color: #FA2742;
-    color: #FAFAFA;
+.dropdown-content ul li a:hover {
+    color: #FA2742;
 }
 
 .dropdown-content.Dark {
