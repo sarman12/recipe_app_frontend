@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 * {
@@ -7,19 +8,10 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-body {
-    position: absolute;
-    width: 100%;
-    top: 6rem;
-}
-
 /* Container */
 .Dark {
     color: #FAFAFA;
     background-color: #201e20;
-}
-
-/*
 }
 
 .Landing_page_container {
@@ -28,9 +20,7 @@ body {
 }
 
 .Landing_page_container.Dark {
-    background-color: #201e20
-
-;
+    background-color: #201e20;
 }
 
 .Landing_page_nav {
@@ -80,7 +70,7 @@ body {
 }
 
 .Landing_page_nav ul li:hover {
-    color: #FA2742 ;
+    color: #FA2742;
 }
 
 .Landing_page_nav.Dark ul li {
@@ -112,9 +102,7 @@ body {
     display: none;
     position: absolute;
     background-color: #FAFAFA;
-    color: #201e20
-
-;
+    color: #201e20;
     min-width: 15rem;
     top: 100%;
     z-index: 1;
@@ -136,7 +124,7 @@ body {
 }
 
 .dropdown-content ul li:hover {
-    background-color: #FA2742 ;
+    background-color: #FA2742;
     color: #FAFAFA;
 }
 
@@ -170,8 +158,6 @@ body {
 
 .overlay.Dark {
     background: #201e20;
-
-;
 }
 
 .fa-within {
@@ -207,172 +193,25 @@ body {
 }
 
 .overlay-input.Dark {
-    background-color: #201e20
-
-;
+    background-color: #201e20;
     border-bottom: 1px solid #FAFAFA;
 }
 
 .overlay-close {
     font-size: 2rem;
-    color: #201e20
-
-;
+    color: #201e20;
     cursor: pointer;
     transition: color 0.3s ease;
-} */
-
-/* Landing Page Body */
-.Landing_page_body {
-    background-image: url('../../assets/background1.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* color: red; */
-    /* position: relative; */
-    /* top: 10vh; */
-    /* margin-top: 2rem; */
-    margin-left: 2rem;
-    margin-right: 2rem;
-    height: 80vh;
-    padding: 2rem;
-    display: flex;
-    clip-path: url(#curvyPath);
-    transition: clip-path 0.5s ease;
-
-    /* border: none; */
 }
 
-.Landing_page_body div {
-    /* border: black 3px solid; */
-    background: transparent;
-
-    padding: 2rem;
-    margin-top: 20rem;
+h1 {
+    font-size: 3rem;
+    font-family: "Pacifico", cursive;
+    font-weight: 600;
+    font-style: normal;
     color: #FA2742;
-    text-align: left;
-    background-blend-mode: color-burn;
 }
 
-.Landing_page_body div h2 {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 2rem;
-    font-weight: 700;
-    background-color: transparent;
-}
-
-.Landing_page_body button {
-    background-color: #FA2742;
-    border: none;
-    color: #FAFAFA;
+p {
     font-size: 1rem;
-    padding: 0.8rem 0.9rem;
-    margin-top: 0.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    transition: transform 0.7s;
-}
-
-.Landing_page_body button:hover {
-    background-color: #FAFAFA;
-    color: #FA2742;
-    border: 1px solid #FA2742;
-    transform: scale(1.1);
-}
-
-
-
-
-.complimentary_dishes {
-    height: fit-content;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-}
-
-.complimentary_dishes h1 {
-    text-align: center;
-    color: #201e20;
-    margin-bottom: 2rem;
-}
-
-.complimentary_dishes_container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* gap: 1rem; */
-}
-
-#dish {
-    position: relative;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    /* border-radius: 8px; */
-    color: #ffffff;
-    transition: opacity 0.3s ease;
-}
-
-.soup {
-    background-image: url('../../assets/soup.jpg');
-    height: 500px;
-}
-
-.Quiche {
-    background-image: url('../../assets/quiche.jpg');
-    height: 500px;
-}
-
-.Lasagne {
-    background-image: url('../../assets/lasanga.jpg');
-    height: 500px;
-}
-
-.Calamari {
-    background-image: url('../../assets/calamari.jpg');
-    height: 500px;
-}
-
-#dish p {
-    position: relative;
-    top: -100%;
-    left: 0%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    text-align: center;
-    padding: 1rem;
-    margin: 0;
-    transition: top 0.3s ease;
-    font-size: 1.5rem;
-    opacity: 1.1;
-}
-
-#dish:hover {
-    opacity: 0.7;
-}
-
-#dish:hover p {
-    top: 0px;
-}
-
-.complimentry_btn_div {
-    padding: 2rem;
-    /* background-color: red; */
-}
-
-.btn {
-    background-color: #FA2742;
-    color: #FAFAFA;
-    padding: 1rem 1.7rem;
-    margin-left: 45.5%;
-    font-size: 1.2rem;
-    border: 1px solid #FA2742;
-    transition: transform 0.6s;
-    cursor: pointer;
-    /* box-shadow: 0px 0px 10px 0px red; */
-
-}
-
-.btn:hover {
-    color: #FA2742;
-    background-color: #FAFAFA;
-    transform: scale(1.1);
 }
