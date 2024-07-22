@@ -10,6 +10,10 @@ import { BiPhone } from 'react-icons/bi';
 import { MdClose, MdEmail } from 'react-icons/md';
 import { BsGithub } from 'react-icons/bs';
 import { LiaLinkedin } from 'react-icons/lia';
+import Seasonal from './Components/Seasonal/Seasonal';
+import Login from './Components/Login/Login';
+import Sign_up from './Components/Sign_up/Sign_up';
+import Recipe from './Components/Recipe/Recipe';
 
 function App() {
   const [visible, setVisible] = useState(false);
@@ -31,11 +35,13 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/cuisine" element={<Cuisine />} />
-        {/* <Route path="/seasonal" element={<Seasonal />} /> */}
-        {/* <Route path="/seafood" element={<Seafood />} /> */}
-        {/* <Route path="/vegan" element={<Vegan />} /> */}
+        <Route path="/seasonal" element={<Seasonal />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Sign_up />} />
+          <Route path="/recipe" element={<Recipe />} />
 
       </Routes>
+      
       <Footer />
 
       <div className={`Landing_page_information ${active ? 'Landing_page_information_show' : ''}`}>

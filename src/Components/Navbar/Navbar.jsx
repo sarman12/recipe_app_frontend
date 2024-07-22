@@ -1,19 +1,27 @@
-// src/components/Navbar.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';
 import { FaSearch } from 'react-icons/fa';
 import { MdClose } from 'react-icons/md';
-import { BiMoon, BiSun, BiCart, BiUser } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
+import { BiCart, BiUser } from 'react-icons/bi';
+import { Link, useNavigate } from 'react-router-dom';
 
-function Navbar({ toggle, toggleMode, visible, toggleOverlay }) {
+function Navbar({ toggle, visible, toggleOverlay }) {
+
+  const navigate = useNavigate();
+  const [isLogin, setIsLogin] = useState(true);
+
+  const handleUserIconClick = () => {
+    navigate('/login');
+    setIsLogin(true);
+  };
+
   const navItems = [
-    { label: 'Trending', options: ['Top 10', 'Top 20', 'Top 30'],link: '/trending' },
+    { label: 'Trending', options: ['Top 10', 'Top 20', 'Top 30'], link: '/trending' },
     { label: 'Cuisines', options: ['Indian', 'Chinese', 'Italian', 'Mexican', 'Japanese'], link: '/cuisine' },
-    { label: 'Seasonal', options: ['Summer', 'Winter', 'Spring', 'Rainy'],link: '/seasonal' },
-    { label: 'Seafood', options: ['Shrimp', 'Crab', 'Lobster'] ,link:'./seafood' },
-    { label: 'Vegan', options: ['Salad', 'Soup', 'Sandwich'],link: '/vegan' },
-    { label: 'Non-vegetarian', options: ['Chicken', 'Beef', 'Pork'],link: '/nonvegetarian' },
+    { label: 'Seasonal', options: ['Summer', 'Winter', 'Spring', 'Rainy'], link: '/seasonal' },
+    { label: 'Seafood', options: ['Shrimp', 'Crab', 'Lobster'], link: '/seafood' },
+    { label: 'Vegan', options: ['Salad', 'Soup', 'Sandwich'], link: '/vegan' },
+    { label: 'Non-vegetarian', options: ['Chicken', 'Beef', 'Pork'], link: '/nonvegetarian' },
   ];
 
   return (
@@ -23,11 +31,7 @@ function Navbar({ toggle, toggleMode, visible, toggleOverlay }) {
         <ul>
           {navItems.map(item => (
             <li key={item.label}>
-              {item.link ? (
-                <Link to={item.link}>{item.label}</Link>
-              ) : (
-                item.label
-              )}
+              <Link to={item.link}>{item.label}</Link>
               <div className={`dropdown-content ${toggle ? 'Dark' : ''}`}>
                 <ul>
                   {item.options.map(option => (
@@ -47,10 +51,9 @@ function Navbar({ toggle, toggleMode, visible, toggleOverlay }) {
             <FaSearch className="fa" onClick={toggleOverlay} />
           )}
           <BiCart className="fa" />
-          <BiUser className="fa" />
+          <BiUser onClick={handleUserIconClick} className="fa" />
         </div>
       </nav>
-
       <div className={`overlay ${visible ? 'overlay-visible' : ''} ${toggle ? 'Dark' : 'Light'}`}>
         <div className="overlay-content">
           <FaSearch className="fa-within" />

@@ -1,0 +1,112 @@
+.login_container {
+    position: fixed;
+    top: 3rem;
+    bottom: 3rem;
+    left: 10rem;
+    right: 10rem;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.7);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+.close_btn{
+    position: fixed;
+    top: 7rem;
+    right: 19.5rem;
+    font-size: 2rem;
+    color: #FA2742;
+    cursor: pointer;
+}
+.logo {
+    border-radius: 1rem 0rem 0rem 1rem;
+    width: 40%;
+    height: 90%;
+    text-align: center;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    margin-top: 5rem;
+    color: #201e20;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.logo img {
+    opacity: 0.5;
+    width: 300px;
+    height: auto;
+    margin-top: 0.5rem;
+}
+.login_part{
+    border-radius: 0rem 1rem 1rem 0rem;
+    /* border: 2px red solid; */
+    padding: 3rem;
+    width: 40%;height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login_part h1{
+    color: #201e20;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.login_part div .fa{
+    font-size: 1.3rem;
+    transform: translate(30px,5px);
+
+}
+input{
+    width: 20rem;
+    padding: 1rem;
+    padding-left: 3rem;
+    font-size: 1.2rem;
+    border-bottom: 2px #201e20 solid;
+    border-top: none;
+    border-left: none;border-right: none;
+}
+.button{
+    margin-top: 1rem;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-left: 1.3rem;
+    margin-bottom: 1rem;
+}
+button{
+    
+    font-size: 1.1rem;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.login_btn{
+    border: none;
+    color: #FAFAFA;
+    background-color: #FA2742;
+}
+.sign_up_btn{
+    background-color: #201e20;
+    color: #FAFAFA;
+}
+.other_way {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-top: 1rem;
+    color: #201e20;
+}
+
+.other_way svg {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}

@@ -80,12 +80,15 @@ html{
     transition: transform 0.5s ease, filter 0.2s ease;
     cursor: pointer;
     overflow: hidden;
+    transform: rotate(-0.6deg);
 }
 
 .cuisine_image:hover {
-    transform: scale(1.03);
-    filter: grayscale(100%);
-}
+    
+    
+    transform: scale(1.05);
+    /* filter: grayscale(100%); */
+filter: brightness(0.8) contrast(1.4) saturate(1.5);}
 
 .cuisine_image p {
     position: absolute;
@@ -122,6 +125,7 @@ html{
 
 .cuisine_images .fa:hover {
     background-color: #666;
+    color: red;
 }
 
 @keyframes slideIn {

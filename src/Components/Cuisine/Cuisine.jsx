@@ -1,6 +1,7 @@
 // src/components/Cuisine.jsx
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Cuisine.css';
 import I01 from '../../assets/I01.jpg';
 import I02 from '../../assets/I02.jpg';
@@ -105,18 +106,23 @@ const cuisinesData = [
     name: "Mexican Cuisine",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quo veritatis odit deleniti molestias quibusdam adipisci omnis modi quod labore. Dolores reprehenderit placeat facilis ducimus beatae fuga totam ipsam doloribus vero maiores.",
     images: [M01, M02, M03, M04, M05, M06, M07, M08, M09, M10, M11, M12, M13, M14, M15],
-    name_of_dishes: ["Chilaquiles ","Huevos Rancheros","Machaca ","Discada","Tacos ","Burritos ","Pozole de Pollo","Menudo ","Cochinita Pibil","Tamales","Quesadilla","Frijoles Puercos","Enchiladas ","Chile en Nogada","Esquites "]
+    name_of_dishes: ["Emilia-Romangna","Risotto","Canbonara Pasta","Florentina Steak","Gelato","Tiramisu","Bruschetta","Gnocchi","Pizza","Arancini","Ravioli","Spaghetti alle Vongole","Trofie al Pesto","Lasagna","Caprese Salad"]
   },
   {
   
     name: "Japanese Cuisine",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quo veritatis odit deleniti molestias quibusdam adipisci omnis modi quod labore. Dolores reprehenderit placeat facilis ducimus beatae fuga totam ipsam doloribus vero maiores.",
     images: [J01, J02, J03, J04, J05, J06, J07,J08, J09, J10, J11, J12, J13, J14, J15],
-    name_of_dishes: ["Sushi","Ramen","Udon","Tempura","Onigiri","Curry Rice","Okonomiyaki ","Miso Soup","Yakitori ","Takoyaki ","Soba","Sukiyaki","Kare raisu","Shabu shabu","Buta-no-shogayaki"]
+    name_of_dishes: ["Emilia-Romangna","Risotto","Canbonara Pasta","Florentina Steak","Gelato","Tiramisu","Bruschetta","Gnocchi","Pizza","Arancini","Ravioli","Spaghetti alle Vongole","Trofie al Pesto","Lasagna","Caprese Salad"]
   },
 ];
 
 const Cuisine = () => {
+  const navigate = useNavigate();
+
+  const handleImageClick = (cuisine, dish, image) => {
+    navigate('/recipe', { state: { cuisine, dish, image } });
+  };
 
   return (
     <div className="cuisines">
@@ -124,7 +130,7 @@ const Cuisine = () => {
       <div className="cuisine_container">
         {cuisinesData.map((cuisine, index) => (
           <div key={index} className="cuisine" id={cuisine.name.toLowerCase()}>
-            <a to={`/cuisine#${cuisine.name}`}>{cuisine.name}</a>
+            <a href={`#${cuisine.name.toLowerCase()}`}>{cuisine.name}</a>
             <p>{cuisine.description}</p>
             <div className="cuisine_images">
               {cuisine.images.map((image, imgIndex) => (
@@ -132,6 +138,7 @@ const Cuisine = () => {
                   key={imgIndex}
                   className="cuisine_image"
                   style={{ backgroundImage: `url(${image})` }}
+                  onClick={() => handleImageClick(cuisine.name, cuisine.name_of_dishes[imgIndex], image)}
                 >
                   <p>{cuisine.name_of_dishes[imgIndex]}</p>
                   <BiPlus className="fa" />
