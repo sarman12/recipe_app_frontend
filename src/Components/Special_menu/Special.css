@@ -1,4 +1,5 @@
 .special_menu {
+    
     color: #FAFAFA;
     font-size: 2.5rem;
     padding: 0.4rem;
@@ -22,7 +23,7 @@
     flex-direction: row;
     transform: translateX(100%);
     transition: transform 0.5s ease;
-    /* background: linear-gradient(180deg, #FAFAFA 35%, #FA2742 5%); */
+    background: linear-gradient(120deg, #FAFAFA 50%, #FA2742 5%);
 
 }
 

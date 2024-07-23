@@ -8,18 +8,18 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-
 .Landing_page_container {
     padding-bottom: 1rem;
     background-color: #FAFAFA;
 }
 
 .Landing_page_nav {
+    animation: slide_fade 1s forwards;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
-    background-color: #FAFAFA;
+    background-color: #FA2742;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,12 +28,34 @@
     transition: background-color 0.3s ease;
 }
 
-
 .Landing_page_nav h1 {
+    cursor: pointer;
+    margin: 0;
     margin-left: 3rem;
-    color: #333;
+    padding: 0;
+    font-size: 3rem;
+    position: relative;
+    color: #FAFAFA;
+    background-color: #FA2742;
+    overflow: hidden;
+    transition: color 0.3s ease;
 }
 
+.Landing_page_nav h1:before {
+    content: "Food Hunt.";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #201e20;
+    width: 0%;
+    overflow: hidden;
+    transition: width 0.5s ease;
+    white-space: nowrap;
+}
+
+.Landing_page_nav h1:hover:before {
+    width: 100%;
+}
 
 .Landing_page_nav ul {
     margin-top: 1.8rem;
@@ -42,11 +64,12 @@
     justify-content: space-between;
     gap: 1.5rem;
     list-style: none;
-    
+    background-color: #FA2742;
 }
 
 .Landing_page_nav ul li {
     text-decoration: none;
+    background-color: #201e20;
     position: relative;
     color: #333;
     font-size: 1.15rem;
@@ -55,23 +78,30 @@
     cursor: pointer;
     transition: color 0.3s ease;
 }
+
 .Landing_page_nav ul li a {
+    background-color: #FA2742;
     text-decoration: none;
-    color: inherit;
+    color: #FAFAFA;
 }
 
-.Landing_page_nav ul li:hover {
-    color: #FA2742;
+.Landing_page_nav ul li a:hover {
+    color: #201e20;
 }
 
 .Landing_page_nav ul li:hover .dropdown-content {
     display: block;
 }
 
+.search {
+    background-color: #FA2742;
+    margin-right: 2rem;
+}
+
 .search .fa {
-    color: #FA2742;
+    background-color: #FA2742;
+    color: #FAFAFA;
     font-size: 2.5rem;
-    border: 2px #FA2742 solid;
     border-radius: 50%;
     cursor: pointer;
     margin-top: 0.5rem;
@@ -79,11 +109,14 @@
     padding: 0.31rem;
 }
 
+.search .fa:hover {
+    color: #201e20;
+}
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #FAFAFA;
+    background-color: #FA2742;
     color: #201e20;
     min-width: 15rem;
     top: 100%;
@@ -99,14 +132,14 @@
     padding: 0rem;
     margin: 0;
 }
-.dropdown-content ul li a {
 
+.dropdown-content ul li a {
     padding: 0.5rem;
     cursor: pointer;
 }
 
 .dropdown-content ul li a:hover {
-    color: #FA2742;
+    color: #201e20;
 }
 
 .dropdown-content.Dark {
@@ -127,45 +160,44 @@
     z-index: 1000;
     transform: translateY(-100%);
     transition: transform 0.7s ease;
+    background-color: #FA2742;
 }
 
 .overlay-visible {
     transform: translateY(0);
 }
 
-.overlay.Light {
-    background: #FAFAFA;
-}
 
-.overlay.Dark {
-    background: #201e20;
-}
 
 .fa-within {
-    color: #888;
+    color: #FAFAFA;
     border-bottom: 2px #333 solid;
     border-right: none;
-    font-size: 3rem;
+    font-size: 3.2rem;
     padding: 0.8rem;
-    background-color: #FAFAFA;
+    background-color: #FA2742;
 }
 
 .overlay-content {
+    color: #FAFAFA;
     text-align: center;
     display: flex;
     align-items: center;
+    background-color: #FA2742;
 }
 
 .overlay-input {
-    border-bottom: 2px solid #333;
+    /* border-bottom: 2px solid #333; */
     border-top: none;
     border-right: none;
     border-left: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
     padding: 0.87rem;
-    background-color: #FAFAFA;
+    background-color: #FA2742;
     width: 80vh;
     margin: 1rem 0;
+    color: #FAFAFA;
+    
 }
 
 .overlay-input:focus {
@@ -173,10 +205,6 @@
     box-shadow: none;
 }
 
-.overlay-input.Dark {
-    background-color: #201e20;
-    border-bottom: 1px solid #FAFAFA;
-}
 
 .overlay-close {
     font-size: 2rem;
@@ -185,14 +213,18 @@
     transition: color 0.3s ease;
 }
 
-h1 {
-    font-size: 3rem;
-    font-family: "Pacifico", cursive;
-    font-weight: 600;
-    font-style: normal;
-    color: #FA2742;
-}
-
 p {
     font-size: 1rem;
+}
+
+@keyframes slide_fade {
+    from {
+        scale: 0.6;
+        opacity: 0;
+    }
+
+    to {
+        scale: 1;
+        opacity: 1;
+    }
 }

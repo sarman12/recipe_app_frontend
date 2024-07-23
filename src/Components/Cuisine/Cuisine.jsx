@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Cuisine.css';
 import { BiPlus } from 'react-icons/bi';
 
@@ -133,10 +133,11 @@ const Cuisine = () => {
                 <div
                   key={imgIndex}
                   className="cuisine_image"
-                  style={{ backgroundImage: `url(${image})` }}
                   onClick={() => handleImageClick(cuisine.name, cuisine.name_of_dishes[imgIndex], image)}
                 >
-                  <p>{cuisine.name_of_dishes[imgIndex]}</p>
+                  <div className="cuisine_image_inner" style={{ backgroundImage: `url(${image})` }}>
+                    <p>{cuisine.name_of_dishes[imgIndex]}</p>
+                  </div>
                   <BiPlus className="fa" />
                 </div>
               ))}

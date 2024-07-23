@@ -5,13 +5,22 @@ import Calamari from '../../assets/calamari.jpg';
 import Lasagna from '../../assets/lasanga.jpg';
 import Quiche from '../../assets/quiche.jpg';
 import Soup from '../../assets/soup.jpg';
+import Biriyani from '../../assets/biriyani.jpg';
+
+const complimentary_dishes = [
+  { dishname: 'Chickpea soup: Italian Origin', image: Soup },
+  { dishname: 'Quiche : A French Pie', image: Quiche },
+  { dishname: 'Italian Pasta Dish : Lasagne', image: Lasagna },
+  { dishname: 'Italian SeaFood : Calamari', image: Calamari },
+  { dishname: 'Chicken Biriyani', image: Biriyani },
+];
 
 function Landing_page() {
   const [toggle, setToggle] = useState(false);
   const navigate = useNavigate();
 
-  const handleImages = (name, state_of_origin, images) => {
-    navigate('/recipe', { state: { name, state_of_origin, images } });
+  const handleImages = (name, state_of_origin, image) => {
+    navigate('/recipe', { state: { name, state_of_origin, image } });
   };
 
   const toggleMode = () => {
@@ -37,22 +46,22 @@ function Landing_page() {
       <div className="complimentary_dishes">
         <h1>Complimentary Dishes</h1>
         <div className="complimentary_dishes_container">
-          <div className="soup" id='dish' onClick={() => handleImages("Chickpea soup", "Italian Origin", Soup)}>
-            <p>Chickpea soup: Italian Origin</p>
-          </div>
-          <div className='Quiche' id='dish' onClick={() => handleImages("Quiche", "A French Pie", Quiche)}>
-            <p>Quiche : A French Pie</p>
-          </div>
-          <div className='Lasagne' id='dish' onClick={() => handleImages("Lasagna", "Italian Pasta Dish", Lasagna)}>
-            <p>Italian Pasta Dish : Lasagna</p>
-          </div>
-          <div className='Calamari' id='dish' onClick={() => handleImages("Calamari", "Italian SeaFood", Calamari)}>
-            <p>Italian SeaFood : Calamari</p>
-          </div>
+          {complimentary_dishes.map((dishes, index) => (
+            <div
+              key={index}
+              id="dish"
+              onClick={() => handleImages(dishes.dishname, dishes.dishname.split(':')[1].trim(), dishes.image)}
+            >
+              <div id="dish_inner" style={{ backgroundImage: `url(${dishes.image})` }}>
+                <p>{dishes.dishname}</p>
+              </div>
+            </div>
+          ))}
         </div>
         <div className='complimentry_btn_div'>
           <button className='btn'>See More</button>
         </div>
+        
       </div>
     </div>
   );

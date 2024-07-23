@@ -18,12 +18,7 @@ function Sign_up() {
   return (
     <div className="login_container">
       <CgClose className='close_btn' onClick={() => navigate('/')}/>
-      <div className="logo">
-        <h1>Presenting Food hunt.</h1>
-        <p>by</p>
-        <img src={logo} alt="Logo" />
-      </div>
-      <div className="login_part">
+      <div className="login_part"  style={{ borderRadius: '1rem 0px 0px 1rem'}}>
         <h1>Sign In</h1>
         <div>
           <BiUser className='fa' />
@@ -47,6 +42,12 @@ function Sign_up() {
           <FaFacebook />
         </div>
       </div>
+      <div className="logo" style={{ borderRadius: '0px 1rem 1rem 0px'}}>
+        <h1>Presenting Food hunt.</h1>
+        <p>by</p>
+        <img src={logo} alt="Logo" />
+      </div>
+      
     </div>
   );
 }

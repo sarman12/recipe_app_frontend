@@ -13,16 +13,18 @@
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    animation: slide_fade_in 1s forwards;
 }
 .close_btn{
     position: fixed;
-    top: 7rem;
-    right: 19.5rem;
+    top: 0rem;
+    right: 1rem;
     font-size: 2rem;
     color: #FA2742;
     cursor: pointer;
 }
 .logo {
+    background: #FAFAFA;
     border-radius: 1rem 0rem 0rem 1rem;
     width: 40%;
     height: 90%;
@@ -44,6 +46,7 @@
     margin-top: 0.5rem;
 }
 .login_part{
+    background-color: #FAFAFA;
     border-radius: 0rem 1rem 1rem 0rem;
     /* border: 2px red solid; */
     padding: 3rem;
@@ -51,6 +54,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    animation: login_slide 1s forwards;
 }
 .login_part h1{
     color: #201e20;
@@ -109,4 +113,28 @@ button{
     width: 2rem;
     height: 2rem;
     cursor: pointer;
+}
+
+
+@keyframes slide_fade_in{
+    from{
+        scale: 0.5;
+        opacity: 0;
+    }
+    to{
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+@keyframes login_slide {
+    from{
+        transform: translateX(50%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    
 }

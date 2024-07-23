@@ -12,7 +12,7 @@ function Navbar() {
   const toggleOverlay = () => setVisible(!visible);
   
   const navigate = useNavigate();
-
+  
   const handleUserIconClick = () => {
     navigate('/login');
   };
@@ -29,7 +29,7 @@ function Navbar() {
   return (
     <div className='Landing_page_container'>
       <nav className='Landing_page_nav'>
-        <h1>Food Hunt.</h1>
+        <h1 onClick={() => {navigate('/')}}>Food Hunt.</h1>
         <ul>
           {navItems.map(item => (
             <li>
@@ -59,7 +59,7 @@ function Navbar() {
       <div className={`overlay ${visible ? 'overlay-visible' : ''}`}>
         <div className="overlay-content">
           <FaSearch className="fa-within" />
-          <input type="search" placeholder="Search..." className='overlay-input'/>
+          <input type="search" placeholder="Search......" className='overlay-input'/>
         </div>
       </div>
     </div>
