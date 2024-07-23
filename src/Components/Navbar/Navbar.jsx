@@ -5,19 +5,21 @@ import { MdClose } from 'react-icons/md';
 import { BiCart, BiUser } from 'react-icons/bi';
 import { Link, useNavigate } from 'react-router-dom';
 
-function Navbar({ toggle, visible, toggleOverlay }) {
+function Navbar() {
+  
+  const [visible, setVisible] = useState(false);
 
+  const toggleOverlay = () => setVisible(!visible);
+  
   const navigate = useNavigate();
-  const [isLogin, setIsLogin] = useState(true);
 
   const handleUserIconClick = () => {
     navigate('/login');
-    setIsLogin(true);
   };
 
   const navItems = [
     { label: 'Trending', options: ['Top 10', 'Top 20', 'Top 30'], link: '/trending' },
-    { label: 'Cuisines', options: ['Indian', 'Chinese', 'Italian', 'Mexican', 'Japanese'], link: '/cuisine' },
+    { label: 'Cuisine', options: ['Indian', 'Chinese', 'Italian', 'Mexican', 'Japanese'], link: '/cuisine' },
     { label: 'Seasonal', options: ['Summer', 'Winter', 'Spring', 'Rainy'], link: '/seasonal' },
     { label: 'Seafood', options: ['Shrimp', 'Crab', 'Lobster'], link: '/seafood' },
     { label: 'Vegan', options: ['Salad', 'Soup', 'Sandwich'], link: '/vegan' },
@@ -25,18 +27,18 @@ function Navbar({ toggle, visible, toggleOverlay }) {
   ];
 
   return (
-    <div className={`Landing_page_container ${toggle ? 'Dark' : ''}`}>
-      <nav className={`Landing_page_nav ${toggle ? 'Dark' : ''}`}>
+    <div className='Landing_page_container'>
+      <nav className='Landing_page_nav'>
         <h1>Food Hunt.</h1>
         <ul>
           {navItems.map(item => (
-            <li key={item.label}>
+            <li>
               <Link to={item.link}>{item.label}</Link>
-              <div className={`dropdown-content ${toggle ? 'Dark' : ''}`}>
+              <div className='dropdown-content'>
                 <ul>
                   {item.options.map(option => (
-                    <li key={option}>
-                      <Link to={`/cuisine#${option.toLowerCase()}`}>{option}</Link>
+                    <li>
+                      <Link to>{option}</Link>
                     </li>
                   ))}
                 </ul>
@@ -54,10 +56,10 @@ function Navbar({ toggle, visible, toggleOverlay }) {
           <BiUser onClick={handleUserIconClick} className="fa" />
         </div>
       </nav>
-      <div className={`overlay ${visible ? 'overlay-visible' : ''} ${toggle ? 'Dark' : 'Light'}`}>
+      <div className={`overlay ${visible ? 'overlay-visible' : ''}`}>
         <div className="overlay-content">
           <FaSearch className="fa-within" />
-          <input type="search" placeholder="Search..." className={`overlay-input ${toggle ? 'Dark' : ''}`} />
+          <input type="search" placeholder="Search..." className='overlay-input'/>
         </div>
       </div>
     </div>

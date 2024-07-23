@@ -9,18 +9,9 @@
 }
 
 
-.Dark {
-    color: #FAFAFA;
-    background-color: #201e20;
-}
-
 .Landing_page_container {
     padding-bottom: 1rem;
     background-color: #FAFAFA;
-}
-
-.Landing_page_container.Dark {
-    background-color: #201e20;
 }
 
 .Landing_page_nav {
@@ -37,18 +28,12 @@
     transition: background-color 0.3s ease;
 }
 
-.Landing_page_nav.Dark {
-    background-color: #1F1F1F;
-}
 
 .Landing_page_nav h1 {
     margin-left: 3rem;
     color: #333;
 }
 
-.Landing_page_nav.Dark h1 {
-    color: #FAFAFA;
-}
 
 .Landing_page_nav ul {
     margin-top: 1.8rem;
@@ -79,10 +64,6 @@
     color: #FA2742;
 }
 
-.Landing_page_nav.Dark ul li {
-    color: #FAFAFA;
-}
-
 .Landing_page_nav ul li:hover .dropdown-content {
     display: block;
 }
@@ -98,11 +79,6 @@
     padding: 0.31rem;
 }
 
-.search .fa.Dark {
-    color: #FAFAFA;
-    background-color: #201e20;
-    border: 1px #FAFAFA solid;
-}
 
 .dropdown-content {
     display: none;
@@ -117,8 +93,8 @@
 
 .dropdown-content ul {
     display: flex;
-    flex-direction: column;
-    gap: 0rem;
+    flex-direction: row;
+    gap: 10px;
     list-style: none;
     padding: 0rem;
     margin: 0;

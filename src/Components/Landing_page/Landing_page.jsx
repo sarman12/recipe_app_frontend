@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import './Landing_page.css';
+import { useNavigate } from 'react-router-dom';
 import Calamari from '../../assets/calamari.jpg';
-import Lasanga from '../../assets/lasanga.jpg';
+import Lasagna from '../../assets/lasanga.jpg';
 import Quiche from '../../assets/quiche.jpg';
-import Soup from '../../assets/soup.jpg'
+import Soup from '../../assets/soup.jpg';
 
 function Landing_page() {
   const [toggle, setToggle] = useState(false);
+  const navigate = useNavigate();
+
+  const handleImages = (name, state_of_origin, images) => {
+    navigate('/recipe', { state: { name, state_of_origin, images } });
+  };
 
   const toggleMode = () => {
     setToggle(!toggle);
@@ -31,16 +37,16 @@ function Landing_page() {
       <div className="complimentary_dishes">
         <h1>Complimentary Dishes</h1>
         <div className="complimentary_dishes_container">
-          <div className="soup" id='dish'>
+          <div className="soup" id='dish' onClick={() => handleImages("Chickpea soup", "Italian Origin", Soup)}>
             <p>Chickpea soup: Italian Origin</p>
           </div>
-          <div className='Quiche' id='dish'>
+          <div className='Quiche' id='dish' onClick={() => handleImages("Quiche", "A French Pie", Quiche)}>
             <p>Quiche : A French Pie</p>
           </div>
-          <div className='Lasagne' id='dish'>
-            <p>Italian Pasta Dish : Lasagne</p>
+          <div className='Lasagne' id='dish' onClick={() => handleImages("Lasagna", "Italian Pasta Dish", Lasagna)}>
+            <p>Italian Pasta Dish : Lasagna</p>
           </div>
-          <div className='Calamari' id='dish'>
+          <div className='Calamari' id='dish' onClick={() => handleImages("Calamari", "Italian SeaFood", Calamari)}>
             <p>Italian SeaFood : Calamari</p>
           </div>
         </div>

@@ -1,8 +1,8 @@
-// src/components/Cuisine.jsx
-import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Cuisine.css';
+import { BiPlus } from 'react-icons/bi';
+
 import I01 from '../../assets/I01.jpg';
 import I02 from '../../assets/I02.jpg';
 import I03 from '../../assets/I03.jpg';
@@ -47,7 +47,6 @@ import IT13 from '../../assets/IT013.jpg';
 import IT14 from '../../assets/IT014.jpg';
 import IT15 from '../../assets/IT015.jpg';
 
-
 import M01 from '../../assets/M01.jpg';
 import M02 from '../../assets/M02.jpg';
 import M03 from '../../assets/M03.jpg';
@@ -63,7 +62,6 @@ import M12 from '../../assets/M012.jpg';
 import M13 from '../../assets/M013.jpg';
 import M14 from '../../assets/M014.jpg';
 import M15 from '../../assets/M015.jpg';
-
 
 import J01 from '../../assets/J01.jpg';
 import J02 from '../../assets/J02.jpg';
@@ -81,8 +79,6 @@ import J13 from '../../assets/J013.jpg';
 import J14 from '../../assets/J014.jpg';
 import J15 from '../../assets/J015.jpg';
 
-import { BiBookmark, BiPlus } from 'react-icons/bi';
-
 const cuisinesData = [
   {
     name: "Indian Cuisine",
@@ -93,35 +89,35 @@ const cuisinesData = [
   {
     name: "Chinese Cuisine",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quo veritatis odit deleniti molestias quibusdam adipisci omnis modi quod labore. Dolores reprehenderit placeat facilis ducimus beatae fuga totam ipsam doloribus vero maiores.",
-    images: [C01, C02, C03, C04, C05, C06,C07,C08,C09,C10],
+    images: [C01, C02, C03, C04, C05, C06, C07, C08, C09, C10],
     name_of_dishes: ["Kung Pulao Chicken","Peking Roast Duck","Tofu","Chow Mein","Cantonese Spring Roll","DongPu Rou","Chinese Hot and Sour Soup","Sweet and Sour Pork","Char Siu Pork","Chicken Fried rice"]
   },
   {
     name: "Italian Cuisine",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quo veritatis odit deleniti molestias quibusdam adipisci omnis modi quod labore. Dolores reprehenderit placeat facilis ducimus beatae fuga totam ipsam doloribus vero maiores.",
     images: [IT01, IT02, IT03, IT04, IT05, IT06, IT07, IT08, IT09, IT10, IT11, IT12, IT13, IT14, IT15],
-    name_of_dishes: ["Emilia-Romangna","Risotto","Canbonara Pasta","Florentina Steak","Gelato","Tiramisu","Bruschetta","Gnocchi","Pizza","Arancini","Ravioli","Spaghetti alle Vongole","Trofie al Pesto","Lasagna","Caprese Salad"]
+    name_of_dishes: ["Emilia-Romagna","Risotto","Carbonara Pasta","Florentina Steak","Gelato","Tiramisu","Bruschetta","Gnocchi","Pizza","Arancini","Ravioli","Spaghetti alle Vongole","Trofie al Pesto","Lasagna","Caprese Salad"]
   },
   {
     name: "Mexican Cuisine",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quo veritatis odit deleniti molestias quibusdam adipisci omnis modi quod labore. Dolores reprehenderit placeat facilis ducimus beatae fuga totam ipsam doloribus vero maiores.",
     images: [M01, M02, M03, M04, M05, M06, M07, M08, M09, M10, M11, M12, M13, M14, M15],
-    name_of_dishes: ["Emilia-Romangna","Risotto","Canbonara Pasta","Florentina Steak","Gelato","Tiramisu","Bruschetta","Gnocchi","Pizza","Arancini","Ravioli","Spaghetti alle Vongole","Trofie al Pesto","Lasagna","Caprese Salad"]
+    name_of_dishes: ["Taco","Burritos","Quesadillas","Chilaquiles","Pico De Gallo","Guacamole","Enchiladas","Tostada","Mole","Salsa","Churros","Elote","Fajitas","Ceviche","Tortillas"]
   },
   {
-  
     name: "Japanese Cuisine",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quo veritatis odit deleniti molestias quibusdam adipisci omnis modi quod labore. Dolores reprehenderit placeat facilis ducimus beatae fuga totam ipsam doloribus vero maiores.",
-    images: [J01, J02, J03, J04, J05, J06, J07,J08, J09, J10, J11, J12, J13, J14, J15],
-    name_of_dishes: ["Emilia-Romangna","Risotto","Canbonara Pasta","Florentina Steak","Gelato","Tiramisu","Bruschetta","Gnocchi","Pizza","Arancini","Ravioli","Spaghetti alle Vongole","Trofie al Pesto","Lasagna","Caprese Salad"]
+    images: [J01, J02, J03, J04, J05, J06, J07, J08, J09, J10, J11, J12, J13, J14, J15],
+    name_of_dishes: ["Sushi","Ramen","Tempura","Yakitori","Sashimi","Soba","Udon","Okonomiyaki","Tonkatsu","Unagi","Onigiri","Natto","Tamago","Yakizakana","Korokke"]
   },
 ];
 
 const Cuisine = () => {
   const navigate = useNavigate();
 
-  const handleImageClick = (cuisine, dish, image) => {
-    navigate('/recipe', { state: { cuisine, dish, image } });
+  const handleImageClick = (cuisineName, dishName, image) => {
+    const formattedDishName = dishName.replace(/\s+/g, '-').toLowerCase();
+    navigate(`/cuisine/${formattedDishName}/recipe`, { state: { cuisineName, dishName, image } });
   };
 
   return (
@@ -129,8 +125,8 @@ const Cuisine = () => {
       <h1>Popular Cuisines</h1>
       <div className="cuisine_container">
         {cuisinesData.map((cuisine, index) => (
-          <div key={index} className="cuisine" id={cuisine.name.toLowerCase()}>
-            <a href={`#${cuisine.name.toLowerCase()}`}>{cuisine.name}</a>
+          <div key={index} className="cuisine" id={cuisine.name.toLowerCase().replace(/\s+/g, '-')}>
+            <a href={`#${cuisine.name.toLowerCase().replace(/\s+/g, '-')}`}>{cuisine.name}</a>
             <p>{cuisine.description}</p>
             <div className="cuisine_images">
               {cuisine.images.map((image, imgIndex) => (

@@ -1,8 +1,6 @@
 import React from 'react';
-import './Sign_up.css';
-import { BsEye } from 'react-icons/bs';
 import { GrGoogle } from 'react-icons/gr';
-import { FaFacebook, FaUserSecret } from 'react-icons/fa';
+import { FaFacebook } from 'react-icons/fa';
 import logo from '../../assets/logo.svg';
 import { BiUser } from 'react-icons/bi';
 import { PiPassword } from 'react-icons/pi';
