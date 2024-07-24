@@ -29,6 +29,7 @@
     width: 40%;
     height: 90%;
     text-align: center;
+    animation: logo_slide 1s forwards;
 }
 
 .logo h1 {
@@ -118,7 +119,7 @@ button{
 
 @keyframes slide_fade_in{
     from{
-        scale: 0.5;
+        scale: 0.8;
         opacity: 0;
     }
     to{
@@ -129,7 +130,7 @@ button{
 
 @keyframes login_slide {
     from{
-        transform: translateX(50%);
+        transform: translateX(-100%);
         opacity: 0;
     }
     to{
@@ -137,4 +138,16 @@ button{
         opacity: 1;
     }
     
+}
+@keyframes logo_slide {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
 }

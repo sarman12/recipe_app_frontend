@@ -1,0 +1,22 @@
+.logo{
+    animation: login_slide 1s forwards;
+
+}
+.login_part{
+    animation: login_slide 1s forwards;
+
+}
+
+@keyframes login_slide {
+    from {
+        scale: 0.5;
+        opacity: 0;
+    }
+
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+
+}
+

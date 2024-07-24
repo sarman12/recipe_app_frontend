@@ -7,7 +7,7 @@ import { PiPassword } from 'react-icons/pi';
 import { GiConfirmed } from 'react-icons/gi';
 import { CgClose } from 'react-icons/cg';
 import { useNavigate } from 'react-router-dom';
-
+import './Sign_up.css'
 function Sign_up() {
   const navigate = useNavigate();
 
