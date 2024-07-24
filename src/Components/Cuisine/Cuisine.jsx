@@ -19,6 +19,9 @@ import I13 from '../../assets/I013.jpg';
 import I14 from '../../assets/I014.jpg';
 import I15 from '../../assets/I015.jpg';
 import I16 from '../../assets/I016.jpg';
+import I17 from '../../assets/I017.jpg';
+import I18 from '../../assets/I018.jpg';
+import I19 from '../../assets/I019.jpg';
 
 import C01 from '../../assets/C01.jpg';
 import C02 from '../../assets/C02.jpg';
@@ -83,7 +86,7 @@ const cuisinesData = [
   {
     name: "Indian Cuisine",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quo veritatis odit deleniti molestias quibusdam adipisci omnis modi quod labore. Dolores reprehenderit placeat facilis ducimus beatae fuga totam ipsam doloribus vero maiores.",
-    images: [I01, I02, I03, I04, I05, I06, I07, I08, I09, I10, I11, I12, I13, I14, I15, I16],
+    images: [I01, I02, I03, I04, I05, I06, I07, I08, I09, I10, I11, I12, I13, I14, I15, I16,I17,I18,I19],
     name_of_dishes: ["Litti Chokha(Bihar)","Poha Jalebi(MP)","Bikaneri Kachori(Rajasthan)","Akki Roti(Karnataka)","Paddu(TN)","Ghugni Chaat(WB)","Chole Bhaturey(Delhi)","Tunde Kabab(Lucknow)","Mirchi Bhaji(Hydrabad)","Fuchka(WB)","Kathi Rolls(WB)","Pav Bhaji(Mumbai)","Butter Chicken(Delhi)","Vada Pav(Mumbai)","Dal Makhani(Punjab)","Momos(Sikkim)","Aloo Gobhi(Punjab)","Rogan Josh(Kashmir)","Tandoori Chicken(Punjab)"]
   },
   {
