@@ -11,6 +11,7 @@ import Sign_up from './Components/Sign_up/Sign_up';
 import Recipe from './Components/Recipe/Recipe';
 import Special from './Components/Special_menu/Special';
 import Vegan from './Components/Vegan/Vegan';
+import Seafood from './Components/Seafood/Seafood';
 
 function App() {
   const [active, setActive] = useState(false);
@@ -26,9 +27,11 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Sign_up />} />
         <Route path="/vegan" element={<Vegan />} />
+        <Route path="/seafood" element={<Seafood />} />
         <Route path="/cuisine/:dish/recipe" element={<Recipe />} />
-        <Route path="/vegan/:dish/recipe" element={<Recipe />} />
         <Route path="/seasonal/:dish/recipe" element={<Recipe />} />
+        <Route path="/seafood/:dish/recipe" element={<Recipe />} />
+        <Route path="/vegan/:dish/recipe" element={<Recipe />} />
       </Routes>
       <Footer />
       <Special active={active} togglenav={togglenav} />

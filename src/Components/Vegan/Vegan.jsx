@@ -2,45 +2,34 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Vegan.css';
 import { BiPlus } from 'react-icons/bi';
-import { vegan_dish_list } from '../Vegan_dish_list';
-
-const cuisinesData = [
-  {
-    name: "Vegan Cuisine",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas quo veritatis odit deleniti molestias quibusdam adipisci omnis modi quod labore. Dolores reprehenderit placeat facilis ducimus beatae fuga totam ipsam doloribus vero maiores.",
-    dishes: vegan_dish_list,
-  },
-];
+import { vegan_dish_list } from '../Vegan_dish_list'; // Ensure this path is correct
 
 const Vegan = () => {
   const navigate = useNavigate();
 
-  const handleImageClick = (cuisineName, dishName, image) => {
+  const handleImageClick = (dishName, image) => {
     const formattedDishName = dishName.replace(/\s+/g, '-').toLowerCase();
-    navigate(`/vegan/${formattedDishName}/recipe`, { state: { cuisineName, dishName, image } });
+    navigate(`/vegan/${formattedDishName}/recipe`, { state: { cuisineName: 'Vegan Cuisine', dishName, image, category: 'Vegan' } });
   };
 
   return (
-    <div className="cuisines">
-      <h1>Popular Cuisines</h1>
-      <div className="cuisine_container">
-        {cuisinesData.map((cuisine, index) => (
-          <div key={index} className="cuisine" id={cuisine.name.toLowerCase().replace(/\s+/g, '-')}>
-            <a href={`#${cuisine.name.toLowerCase().replace(/\s+/g, '-')}`}>{cuisine.name}</a>
-            <p>{cuisine.description}</p>
-            <div className="cuisine_images">
-              {cuisine.dishes.map((dish, imgIndex) => (
-                <div
-                  key={imgIndex}
-                  className="cuisine_image"
-                  onClick={() => handleImageClick(cuisine.name, dish.name, dish.image)}
-                >
-                  <div className="cuisine_image_inner" style={{ backgroundImage: `url(${dish.image})` }}>
-                    <p>{dish.name}</p>
-                  </div>
-                  <BiPlus className="fa" />
+    <div className="vegan_cuisines">
+      <h1>Popular Vegan Dishes</h1>
+      <div className="vegan_cuisine_container">
+        {vegan_dish_list.map((dish, index) => (
+          <div key={index} className="vegan_cuisine" id={dish.name.toLowerCase().replace(/\s+/g, '-')}>
+            <a href={`#${dish.name.toLowerCase().replace(/\s+/g, '-')}`}>{dish.name}</a>
+            <p>{dish.ingredients}</p>
+            <div className="vegan_cuisine_images">
+              <div
+                className="vegan_cuisine_image"
+                onClick={() => handleImageClick(dish.name, dish.image)}
+              >
+                <div className="vegan_cuisine_image_inner" style={{ backgroundImage: `url(${dish.image})` }}>
+                  <p>{dish.name}</p>
                 </div>
-              ))}
+                <BiPlus className="fa" />
+              </div>
             </div>
           </div>
         ))}

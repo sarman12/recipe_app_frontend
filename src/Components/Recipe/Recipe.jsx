@@ -1,11 +1,12 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import './Recipe.css'; // Ensure this path is correct
+import './Recipe.css';
 import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
 import { CgClose } from 'react-icons/cg';
-import { cuisineDishList } from '../data'; // Ensure this path is correct
-import { vegan_dish_list } from '../Vegan_dish_list'; // Ensure this path is correct
-import { seasonalDishList } from '../Seasonal_dish_list'; // Ensure this path is correct
+import { cuisineDishList } from '../data';
+import { vegan_dish_list } from '../Vegan_dish_list';
+import { seasonalDishList } from '../Seasonal_dish_list';
+import { seafoodDishList } from '../seafood_dish_list';
 
 const Recipe = () => {
   const navigate = useNavigate();
@@ -13,20 +14,31 @@ const Recipe = () => {
   const { cuisineName, dishName, image, category } = location.state || {};
 
   // Determine the correct dish list based on the category
-  const dishList = cuisineName === 'Vegan Cuisine'
+  const dishList = category === 'Vegan'
     ? vegan_dish_list
     : category === 'Seasonal'
     ? seasonalDishList
+    : category === 'Seafood'
+    ? seafoodDishList
     : cuisineDishList;
 
   // Find the index of the current dish
   const currentIndex = dishList.findIndex(dish => dish.name === dishName);
 
+  // Construct the base URL based on category
+  const baseUrl = category === 'Vegan'
+    ? 'vegan'
+    : category === 'Seasonal'
+    ? 'seasonal'
+    : category === 'Seafood'
+    ? 'seafood'
+    : 'cuisine';
+
   // Handle left arrow click
   const handleLeft = () => {
     if (currentIndex > 0) {
       const prevDish = dishList[currentIndex - 1];
-      navigate(`/${cuisineName === 'Vegan Cuisine' ? 'vegan' : category === 'Seasonal' ? 'seasonal' : 'cuisine'}/${prevDish.name.replace(/\s+/g, '-').toLowerCase()}/recipe`, {
+      navigate(`/${baseUrl}/${prevDish.name.replace(/\s+/g, '-').toLowerCase()}/recipe`, {
         state: { cuisineName, dishName: prevDish.name, image: prevDish.image, category },
       });
     }
@@ -36,7 +48,7 @@ const Recipe = () => {
   const handleRight = () => {
     if (currentIndex < dishList.length - 1) {
       const nextDish = dishList[currentIndex + 1];
-      navigate(`/${cuisineName === 'Vegan Cuisine' ? 'vegan' : category === 'Seasonal' ? 'seasonal' : 'cuisine'}/${nextDish.name.replace(/\s+/g, '-').toLowerCase()}/recipe`, {
+      navigate(`/${baseUrl}/${nextDish.name.replace(/\s+/g, '-').toLowerCase()}/recipe`, {
         state: { cuisineName, dishName: nextDish.name, image: nextDish.image, category },
       });
     }
@@ -44,15 +56,15 @@ const Recipe = () => {
 
   // Find the current dish details
   const recipe = dishList.find(dish => dish.name === dishName) || {
-    ingredients: "No data available",
-    recipe: "No data available",
+    ingredients: ["No data available"],
+    recipe: ["No data available"],
   };
 
   return (
     <div className="recipe">
       <BiSolidLeftArrow className='fa_left' onClick={handleLeft} />
       <BiSolidRightArrow className='fa_right' onClick={handleRight} />
-      <CgClose onClick={() => navigate(`/${cuisineName === 'Vegan Cuisine' ? 'vegan' : category === 'Seasonal' ? 'seasonal' : 'cuisine'}`)} className='fa_cross' />
+      <CgClose onClick={() => navigate(`/${baseUrl}`)} className='fa_cross' />
       <div className="recipe_container">
         <h1>{dishName}</h1>
         <div className="recipe_div">
@@ -60,8 +72,9 @@ const Recipe = () => {
             <img src={image} alt={dishName} />
           </div>
           <div className="recipe_description">
-            <h4>Ingredients - <p>{recipe.ingredients}</p></h4>
-            <h4>Recipe -</h4>
+            <h4>Ingredients:</h4>
+            <p>{recipe.ingredients}</p>
+            <h4>Recipe:</h4>
             <p>{recipe.recipe}</p>
           </div>
         </div>
