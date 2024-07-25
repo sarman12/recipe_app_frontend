@@ -29,7 +29,6 @@
     width: 40%;
     height: 90%;
     text-align: center;
-    animation: logo_slide 1s forwards;
 }
 
 .logo h1 {
@@ -55,13 +54,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: login_slide 1s forwards;
 }
 .login_part h1{
     color: #201e20;
     font-size: 2rem;
     text-align: center;
     margin-bottom: 2rem;
+    font-weight: 100;
 }
 .login_part div .fa{
     font-size: 1.3rem;
@@ -120,34 +119,10 @@ button{
 @keyframes slide_fade_in{
     from{
         scale: 0.9;
-        opacity: 0;
+        opacity: 0.5;
     }
     to{
         scale: 1;
         opacity: 1;
     }
-}
-
-@keyframes login_slide {
-    from{
-        transform: scale(0.9);
-        opacity: 0;
-    }
-    to{
-        transform: scale(1);
-        opacity: 1;
-    }
-    
-}
-@keyframes logo_slide {
-    from {
-        transform: scale(0.9);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(1);
-        opacity: 1;
-    }
-
 }

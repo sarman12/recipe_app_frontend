@@ -13,25 +13,25 @@
     -webkit-backdrop-filter: blur(10px);
     color: #FAFAFA;
     box-shadow: 0px 0px 20px 2px black;
+    animation: slide_from_right 1s forwards;
 }
 
-.fa_left {
+.fa_left,
+.fa_right,
+.fa_cross {
     cursor: pointer;
     background: transparent;
     font-size: 2rem;
     color: #FAFAFA;
     position: fixed;
     top: 50%;
+}
+
+.fa_left {
     left: 1%;
 }
 
 .fa_right {
-    cursor: pointer;
-    background: transparent;
-    font-size: 2rem;
-    color: #FAFAFA;
-    position: fixed;
-    top: 50%;
     right: 1%;
 }
 
@@ -67,7 +67,6 @@
     width: 490px;
     height: 400px;
     border-radius: 1rem;
-    /* border: 2px #201e20 solid; */
     box-shadow: 2px 2px 10px 0px #201e20;
 }
 
@@ -114,4 +113,16 @@ p {
     color: #FAFAFA;
     background-color: transparent;
     cursor: pointer;
+}
+
+@keyframes slide_from_right {
+    from {
+        transform: translateX(100%);
+        opacity: 0.8;
+    }
+
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
 }

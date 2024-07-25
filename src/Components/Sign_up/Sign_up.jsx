@@ -19,7 +19,7 @@ function Sign_up() {
     <div className="login_container">
       <CgClose className='close_btn' onClick={() => navigate('/')}/>
       <div className="login_part"  style={{ borderRadius: '1rem 0px 0px 1rem'}}>
-        <h1>Sign In</h1>
+        <h1>Create your account</h1>
         <div>
           <BiUser className='fa' />
           <input type="email" placeholder='Enter your email.....' />
@@ -33,7 +33,7 @@ function Sign_up() {
           <input type="password" placeholder='Confirm your Password.....' />
         </div>
         <div className="button">
-          <button className='sign_up_btn'>Sign In</button>
+          <button className='sign_up_btn'>Register</button>
           <button className='login_btn' onClick={handleLoginClick}>Login</button>
         </div>
         <p>or</p>

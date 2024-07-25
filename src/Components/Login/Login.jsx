@@ -24,7 +24,7 @@ function Login() {
         <img src={logo} alt="Logo" />
       </div>
       <div className="login_part">
-        <h1>Login</h1>
+        <h1>Log into your Account</h1>
         <div>
           <BiUser className='fa' />
           <input type="email" placeholder='Enter your email.....' />
@@ -35,7 +35,7 @@ function Login() {
         </div>
         <div className="button">
           <button className='login_btn'>Login</button>
-          <button className='sign_up_btn' onClick={handleSignUpClick}>Sign In</button>
+          <button className='sign_up_btn' onClick={handleSignUpClick}>Register</button>
         </div>
         <p>or</p>
         <div className="other_way">
