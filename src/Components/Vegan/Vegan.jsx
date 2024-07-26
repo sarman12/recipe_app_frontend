@@ -18,8 +18,8 @@ const Vegan = () => {
       <div className="vegan_cuisine_container">
         {vegan_dish_list.map((dish, index) => (
           <div key={index} className="vegan_cuisine" id={dish.name.toLowerCase().replace(/\s+/g, '-')}>
-            <a href={`#${dish.name.toLowerCase().replace(/\s+/g, '-')}`}>{dish.name}</a>
-            <p>{dish.ingredients}</p>
+          
+            
             <div className="vegan_cuisine_images">
               <div
                 className="vegan_cuisine_image"
@@ -31,6 +31,13 @@ const Vegan = () => {
                 <BiPlus className="fa" />
               </div>
             </div>
+            <div className="dish_item_intro">
+              <a href={`#${dish.name.toLowerCase().replace(/\s+/g, '-')}`}>{dish.name}</a>
+              <p>{dish.ingredients}</p>
+
+            </div>
+
+
           </div>
         ))}
       </div>

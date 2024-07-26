@@ -12,6 +12,7 @@ import Recipe from './Components/Recipe/Recipe';
 import Special from './Components/Special_menu/Special';
 import Vegan from './Components/Vegan/Vegan';
 import Seafood from './Components/Seafood/Seafood';
+import NonVegetarian from './Components/Non_vegeterian/Non_vegeterian';
 
 function App() {
   const [active, setActive] = useState(false);
@@ -28,6 +29,8 @@ function App() {
         <Route path="/register" element={<Sign_up />} />
         <Route path="/vegan" element={<Vegan />} />
         <Route path="/seafood" element={<Seafood />} />
+        <Route path="/non-vegetarian" element={<NonVegetarian />} />
+        <Route path="/non-vegetarian/:dish/recipe" element={<Recipe />} />
         <Route path="/cuisine/:dish/recipe" element={<Recipe />} />
         <Route path="/seasonal/:dish/recipe" element={<Recipe />} />
         <Route path="/seafood/:dish/recipe" element={<Recipe />} />

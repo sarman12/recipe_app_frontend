@@ -17,69 +17,63 @@ body {
     color: #333;
 }
 
-.season a {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 2rem;
-    font-weight: 500;
-    text-decoration: none;
-    color: #333;
-}
-
-.seasonals {
+.seasonal_cuisines {
     margin-top: 20px;
     padding: 2rem;
     background-color: #FAFAFA;
     border-radius: 8px;
-    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
-.seasonals h1 {
+.seasonal_cuisines h1 {
     font-size: 2.9rem;
     color: #201e20;
     margin-bottom: 1rem;
     text-align: center;
     font-weight: 700;
-    font-family: 'Playfair Display', serif;
     letter-spacing: 1.5px;
     background-color: transparent;
+    font-weight: 300;
 }
 
-.seasonal_container {
+.seasonal_cuisine_container {
+    /* border: #201e20 solid 4px; */
     max-width: 1200px;
     margin: auto;
     padding: 1rem;
     position: relative;
 }
 
-.season {
+.seasonal_cuisine a {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.6rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: #FA2742;
+}
+
+.seasonal_cuisine {
     margin-bottom: 5rem;
     padding: 1rem;
     text-align: left;
     background-color: #FAFAFA;
-    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
     position: relative;
-    opacity: 0;
-    transform: scale(0.95);
-    animation: fadeInScale 1s forwards;
     border-radius: 8px;
 }
 
-.season p {
+.seasonal_cuisine p {
     font-size: 1rem;
     color: #666;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
 }
 
-.season_images {
+.seasonal_cuisine_images {
     margin-top: 1rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* gap: 0.4rem; */
 }
 
-.season_image {
+.seasonal_cuisine_image {
     width: 100%;
     height: 450px;
     position: relative;
@@ -87,7 +81,7 @@ body {
     transition: transform 0.5s ease;
 }
 
-.season_image_inner {
+.seasonal_cuisine_image_inner {
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -97,18 +91,32 @@ body {
     filter: grayscale(0%);
 }
 
-.season_image:hover .season_image_inner {
-    transform: scale(1.15);
-    filter: brightness(0.8) contrast(1.4) saturate(1.5);
+.seasonal_cuisine_image:hover .seasonal_cuisine_image_inner {
+    transform: scale(1.2);
+    filter: brightness(1) contrast(1.3) saturate(1.2);
 }
 
-.season_image p {
+.seasonal_cuisine_item {
+    margin-bottom: 3rem;
+    padding: 1rem;
+    text-align: left;
+    background-color: #FAFAFA;
+    position: relative;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInScale 1s forwards;
+    border-radius: 8px;
+    display: flex;
+    gap: 2rem;
+}
+
+.seasonal_cuisine_image p {
+    border: 1px #FA2742 solid;
     position: absolute;
     top: -100%;
-    left: 10%;
-    width: 100%;
+    left: 30%;
+    width: 70%;
     background-color: rgba(250, 250, 250, 0.8);
-    /* Making background transparent */
     color: #FA2742;
     text-align: center;
     padding: 20px;
@@ -117,16 +125,14 @@ body {
     z-index: 1;
     border-radius: 0 0 8px 8px;
     filter: blur(2px);
-    /* Adding blur effect */
 }
 
-.season_image:hover p {
-    top: 10%;
+.seasonal_cuisine_image:hover p {
+    top: 15%;
     filter: blur(0);
-    /* Removing blur effect on hover */
 }
 
-.season_images .fa {
+.seasonal_cuisine_images .fa {
     color: #FFF;
     font-size: 2.5rem;
     background-color: #444;
@@ -140,15 +146,15 @@ body {
     cursor: pointer;
 }
 
-.season_images .fa:hover {
-    background-color: #666;
+.seasonal_cuisine_images .fa:hover {
+    background-color: #FAFAFA;
     color: #201e20;
 }
 
 @keyframes fadeInScale {
     from {
         opacity: 0;
-        transform: scale(0.9);
+        transform: scale(0.6);
     }
 
     to {

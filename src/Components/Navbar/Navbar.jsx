@@ -23,7 +23,7 @@ function Navbar() {
     { label: 'Seasonal', options: ['Summer', 'Winter', 'Spring', 'Rainy'], link: '/seasonal' },
     { label: 'Seafood', options: ['Shrimp', 'Crab', 'Lobster'], link: '/seafood' },
     { label: 'Vegan', options: ['Salad', 'Soup', 'Sandwich'], link: '/vegan' },
-    { label: 'Non-vegetarian', options: ['Chicken', 'Beef', 'Pork'], link: '/nonvegetarian' },
+    { label: 'Non-vegetarian', options: ['Chicken', 'Beef', 'Pork'], link: '/non-vegetarian' },
   ];
 
   return (

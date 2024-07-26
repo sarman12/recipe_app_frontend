@@ -88,12 +88,11 @@ const Seafood = () => {
 
   return (
     <div className="seafoods">
-      <h1>Seafood Dishes</h1>
+      <h1>Popular Seafood Dishes</h1>
       <div className="seafood_container">
         {seafoodDishList.map((dish, index) => (
           <div key={index} className="seafood" id={dish.name.toLowerCase().replace(/\s+/g, '-')}>
-            <a href={`#${dish.name.toLowerCase().replace(/\s+/g, '-')}`}>{dish.name}</a>
-            <p>{dish.description}</p>
+            
             <div className="seafood_images">
               {dish.images.length > 0 ? (
                 dish.images.map((image, imgIndex) => (
@@ -111,6 +110,10 @@ const Seafood = () => {
               ) : (
                 <p>No dishes available</p>
               )}
+            </div>
+            <div className="dish_item_intro">
+              <a href={`#${dish.name.toLowerCase().replace(/\s+/g, '-')}`}>{dish.name}</a>
+            <p>{dish.description}</p>
             </div>
           </div>
         ))}

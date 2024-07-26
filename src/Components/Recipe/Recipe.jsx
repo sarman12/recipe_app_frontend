@@ -7,31 +7,33 @@ import { cuisineDishList } from '../data';
 import { vegan_dish_list } from '../Vegan_dish_list';
 import { seasonalDishList } from '../Seasonal_dish_list';
 import { seafoodDishList } from '../seafood_dish_list';
+import { nonvegeterian_dish_list } from '../nonvegeterian_dish_list';
 
 const Recipe = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { cuisineName, dishName, image, category } = location.state || {};
 
-  // Determine the correct dish list based on the category
   const dishList = category === 'Vegan'
     ? vegan_dish_list
     : category === 'Seasonal'
     ? seasonalDishList
     : category === 'Seafood'
     ? seafoodDishList
+    : category === 'Non-Vegetarian'
+    ? nonvegeterian_dish_list
     : cuisineDishList;
 
-  // Find the index of the current dish
   const currentIndex = dishList.findIndex(dish => dish.name === dishName);
 
-  // Construct the base URL based on category
   const baseUrl = category === 'Vegan'
     ? 'vegan'
     : category === 'Seasonal'
     ? 'seasonal'
     : category === 'Seafood'
     ? 'seafood'
+    : category === 'Non-Vegetarian'
+    ? 'non-vegetarian'
     : 'cuisine';
 
   // Handle left arrow click
@@ -73,9 +75,9 @@ const Recipe = () => {
           </div>
           <div className="recipe_description">
             <h4>Ingredients:</h4>
-            <p>{recipe.ingredients}</p>
+            <p>{Array.isArray(recipe.ingredients) ? recipe.ingredients.join(', ') : recipe.ingredients}</p>
             <h4>Recipe:</h4>
-            <p>{recipe.recipe}</p>
+            <p>{Array.isArray(recipe.recipe) ? recipe.recipe.join(', ') : recipe.recipe}</p>
           </div>
         </div>
       </div>

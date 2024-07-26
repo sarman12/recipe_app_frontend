@@ -31,8 +31,8 @@ body {
     color: #201e20;
     margin-bottom: 1rem;
     text-align: center;
-    font-weight: 700;
-    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    /* font-family: 'Playfair Display', serif; */
     letter-spacing: 1.5px;
     background-color: transparent;
 }
@@ -44,16 +44,11 @@ body {
     position: relative;
 }
 
-.vegan_cuisine a {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 2rem;
-    font-weight: 500;
-    text-decoration: none;
-    color: #333;
-}
+
 
 .vegan_cuisine {
-    margin-bottom: 5rem;
+    /* border: 2px red solid; */
+    margin-bottom: 3rem;
     padding: 1rem;
     text-align: left;
     background-color: #FAFAFA;
@@ -62,23 +57,27 @@ body {
     transform: scale(0.95);
     animation: fadeInScale 01s forwards;
     border-radius: 8px;
+    display: flex;
+    gap: 2rem;
 }
-
-.vegan_cuisine p {
-    font-size: 1rem;
-    color: #666;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
+.dish_item_intro a{
+    text-decoration: none;
+    color: #201e20;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.6rem;
+    margin-left: 1rem;
+}
+.dish_item_intro p{
+    font-size: 1.1rem;
 }
 
 .vegan_cuisine_images {
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
 }
 
 .vegan_cuisine_image {
-    width: 100%;
+    width: 600px;
     height: 450px;
     position: relative;
     overflow: hidden;
@@ -102,12 +101,12 @@ body {
 }
 
 .vegan_cuisine_image p {
+        border: 1px #FA2742 solid;
     position: absolute;
     top: -100%;
-    left: 10%;
-    width: 100%;
+    left: 30%;
+    width: 70%;
     background-color: rgba(250, 250, 250, 0.8);
-    /* Making background transparent */
     color: #FA2742;
     text-align: center;
     padding: 20px;
@@ -116,16 +115,15 @@ body {
     z-index: 1;
     border-radius: 0 0 8px 8px;
     filter: blur(2px);
-    /* Adding blur effect */
 }
 
 .vegan_cuisine_image:hover p {
-    top: 10%;
+    top: 15%;
     filter: blur(0);
-    /* Removing blur effect on hover */
 }
 
 .vegan_cuisine_images .fa {
+    /* border: 1px #201e20 solid; */
     color: #FFF;
     font-size: 2.5rem;
     background-color: #444;
@@ -140,8 +138,8 @@ body {
 }
 
 .vegan_cuisine_images .fa:hover {
-    background-color: #666;
-    color: #201e20;
+    background-color: #FAFAFA;
+        color: #201e20;
 }
 
 @keyframes fadeInScale {

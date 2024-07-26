@@ -25,36 +25,49 @@ const seasonData = [
 const Seasonal = () => {
   const navigate = useNavigate();
 
-  const handleImageClick = (seasonName, dishName, image) => {
+  const handleImageClick = (dishName, image) => {
     const formattedDishName = dishName.replace(/\s+/g, '-').toLowerCase();
     navigate(`/seasonal/${formattedDishName}/recipe`, {
-      state: { seasonName, dishName, image, category: 'Seasonal' },
+      state: { cuisineName: 'Seasonal Cuisine', dishName, image, category: 'Seasonal' },
     });
   };
 
   return (
-    <div className="seasonals">
+    <div className="seasonal_cuisines">
       <h1>Seasonal Dishes</h1>
-      <div className="seasonal_container">
+      <div className="seasonal_cuisine_container">
         {seasonData.map((season, index) => (
-          <div key={index} className="season" id={season.name.toLowerCase().replace(/\s+/g, '-')}>
+          <div key={index} className="seasonal_cuisine" id={season.name.toLowerCase().replace(/\s+/g, '-')}>
             <a href={`#${season.name.toLowerCase().replace(/\s+/g, '-')}`}>{season.name}</a>
             <p>{season.description}</p>
-            <div className="season_images">
+            <div className="seasonal_cuisine_images">
               {season.dishes.map((dish, imgIndex) => (
-                <div
-                  key={imgIndex}
-                  className="season_image"
-                  onClick={() => handleImageClick(season.name, dish.name, dish.image)}
-                >
-                  <div className="season_image_inner" style={{ backgroundImage: `url(${dish.image})` }}>
-                    <p>{dish.name}</p>
+                <div key={imgIndex} className="seasonal_cuisine_item">
+                  <div
+                    className="seasonal_cuisine_image"
+                    onClick={() => handleImageClick(dish.name, dish.image)}
+                  >
+                    <div className="seasonal_cuisine_image_inner" style={{ backgroundImage: `url(${dish.image})` }}>
+                      <p>{dish.name}</p>
+                    </div>
+                    <BiPlus className="fa" />
                   </div>
-                  <BiPlus className="fa" />
+
+
+                  <div className="dish_item_intro">
+                  
+                  <a className="dish_name">{dish.name}</a>
+                  <p className="dish_introduction">{dish.introduction}</p>
+
+                  </div>
                 </div>
+                
               ))}
             </div>
           </div>
+
+
+
         ))}
       </div>
     </div>

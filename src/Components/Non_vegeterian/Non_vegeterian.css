@@ -17,15 +17,7 @@ body {
     color: #333;
 }
 
-/* .seafood a {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 2rem;
-    font-weight: 500;
-    text-decoration: none;
-    color: #201e20;
-} */
-
-.seafoods {
+.nonvegetarian_cuisines {
     margin-top: 20px;
     padding: 2rem;
     background-color: #FAFAFA;
@@ -34,7 +26,7 @@ body {
     overflow: hidden;
 }
 
-.seafoods h1 {
+.nonvegetarian_cuisines h1 {
     font-size: 2.9rem;
     color: #201e20;
     margin-bottom: 1rem;
@@ -45,23 +37,14 @@ body {
     background-color: transparent;
 }
 
-.seafood_container {
-    /* background-color: #FA2742; */
+.nonvegetarian_cuisine_container {
     max-width: 1200px;
     margin: auto;
     padding: 1rem;
     position: relative;
 }
 
-.seafood_types {
-    /* background-color: #FA2742; */
-    margin-top: 2rem;
-    padding: 2rem;
-    position: relative;
-}
-
-.seafood {
-    /* background-color: #FA2742; */
+.nonvegetarian_cuisine {
     margin-bottom: 3rem;
     padding: 1rem;
     text-align: left;
@@ -69,49 +52,41 @@ body {
     position: relative;
     opacity: 0;
     transform: scale(0.95);
-    animation: fadeInScale 1s forwards;
+    animation: fadeInScale 0.1s forwards;
     border-radius: 8px;
     display: flex;
+    gap: 2rem;
 }
-.dish_item_intro p{
-    font-size: 1rem;
-        color: #666;
-        margin-top: 1rem;
-        margin-bottom: 1.5rem;
 
-}
-.dish_item_intro a{
+
+.dish_item_intro a {
     text-decoration: none;
-        color: #201e20;
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 2.6rem;
-
+    color: #201e20;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2.6rem;
+    margin-left: 1rem;
 }
 
-/* .seafood p {
-    
-} */
+.dish_item_intro p {
+    font-size: 1.1rem;
+}
 
-.seafood_images {
-    margin-top: 1rem;
+.nonvegetarian_cuisine_images {
+    /* margin-top: 1rem; */
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
 }
 
-.seafood_image {
-    /* border: 2px red solid; */
+.nonvegetarian_cuisine_image {
     width: 600px;
     height: 450px;
-
     position: relative;
     overflow: hidden;
     transition: transform 0.5s ease;
 }
 
-.seafood_image_inner {
+.nonvegetarian_cuisine_image_inner {
     background-size: cover;
     background-position: center;
-
     width: 100%;
     height: 100%;
     transition: transform 0.5s ease, filter 0.2s ease;
@@ -119,12 +94,13 @@ body {
     filter: grayscale(0%);
 }
 
-.seafood_image:hover .seafood_image_inner {
+.nonvegetarian_cuisine_image:hover .nonvegetarian_cuisine_image_inner {
     transform: scale(1.2);
     filter: brightness(1) contrast(1.3) saturate(1.2);
 }
 
-.seafood_image p {
+.nonvegetarian_cuisine_image p {
+    border: 1px #FA2742 solid;
     position: absolute;
     top: -100%;
     left: 30%;
@@ -138,20 +114,15 @@ body {
     z-index: 1;
     border-radius: 0 0 8px 8px;
     filter: blur(2px);
-    border:#FA2742 1px solid;
 }
 
-.seafood_image:hover p {
+.nonvegetarian_cuisine_image:hover p {
     top: 15%;
     filter: blur(0);
 }
-.dish_item_intro{
-    width: 800px;
-    padding: 0.4rem;
-    /* border: 2px red solid; */
-}
 
-.seafood_images .fa {
+.nonvegetarian_cuisine_images .fa {
+    /* border: 1px #201e20 solid; */
     color: #FFF;
     font-size: 2.5rem;
     background-color: #444;
@@ -163,10 +134,9 @@ body {
     opacity: 0.9;
     border-radius: 50px;
     cursor: pointer;
-    /* border: #FA2742 1px solid; */
 }
 
-.seafood_images .fa:hover {
+.nonvegetarian_cuisine_images .fa:hover {
     background-color: #FAFAFA;
     color: #201e20;
 }
