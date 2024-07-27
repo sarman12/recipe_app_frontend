@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    /* background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
     font-family: 'Montserrat', sans-serif;
     color: #333;
 }
@@ -19,7 +19,7 @@ body {
 .vegan_cuisines {
     margin-top: 20px;
     padding: 2rem;
-    background-color: #FAFAFA;
+    /* background-color: #FAFAFA; */
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;

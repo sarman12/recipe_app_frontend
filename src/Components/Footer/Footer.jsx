@@ -34,11 +34,11 @@ function Footer() {
       <div className="footer_social">
         <h2>Connect With Us</h2>
         <div>
-          <BsLinkedin className="fa" />
-          <FaFacebook className="fa" />
-          <FaGithub className="fa" />
-          <BsTwitter className="fa" />
-          <ImInstagram className="fa" />
+          <BsLinkedin className="fa_footer" />
+          <FaFacebook className="fa_footer" />
+          <FaGithub className="fa_footer" />
+          <BsTwitter className="fa_footer" />
+          <ImInstagram className="fa_footer" />
         </div>
       </div>
       <div className="footer_copywrite">

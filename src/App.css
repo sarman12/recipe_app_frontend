@@ -10,9 +10,10 @@
 }
 
 body {
-  position: absolute;
+  position: relative;
   width: 100%;
   top: 6rem;
+  /* background-image: linear-gradient(to bottom,red,white); */
 }
 
 

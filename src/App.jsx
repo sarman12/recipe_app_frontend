@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from './Components/Landing_page/Landing_page';
@@ -13,10 +13,10 @@ import Special from './Components/Special_menu/Special';
 import Vegan from './Components/Vegan/Vegan';
 import Seafood from './Components/Seafood/Seafood';
 import NonVegetarian from './Components/Non_vegeterian/Non_vegeterian';
-import Addtocart from './Components/Add_to_cart/Add_to_cart';
+// import Addtocart from './Components/Add_to_cart/Add_to_cart';
 
 function App() {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = React.useState(false);
   const togglenav = () => setActive(!active);
 
   return (
@@ -31,8 +31,7 @@ function App() {
         <Route path="/vegan" element={<Vegan />} />
         <Route path="/seafood" element={<Seafood />} />
         <Route path="/non-vegetarian" element={<NonVegetarian />} />
-        <Route path="/yourcart" element={<Addtocart />} />
-
+        {/* <Route path="/yourcart" element={<Addtocart />} /> */}
         <Route path="/non-vegetarian/:dish/recipe" element={<Recipe />} />
         <Route path="/cuisine/:dish/recipe" element={<Recipe />} />
         <Route path="/seasonal/:dish/recipe" element={<Recipe />} />

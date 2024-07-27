@@ -62,7 +62,7 @@
     margin-bottom: 2rem;
     font-weight: 100;
 }
-.login_part div .fa{
+.login_part div .fa_login{
     font-size: 1.3rem;
     transform: translate(30px,5px);
 

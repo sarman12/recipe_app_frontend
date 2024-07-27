@@ -8,15 +8,15 @@
 }
 
 body {
-    position: absolute;
-    width: 100%;
-    top: 6rem;
+background-image: linear-gradient(to top, #FF66CC, #FFDAB9);
+    /* Rose Pink to Peach */
+            background-attachment: fixed;
 }
 
 
 .Landing_page_container {
     padding-bottom: 1rem;
-    background-color: #FAFAFA;
+    /* background-color: #FAFAFA; */
 }
 
 .Landing_page_container.Dark {

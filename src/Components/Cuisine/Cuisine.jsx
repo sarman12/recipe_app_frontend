@@ -173,7 +173,7 @@ const Cuisine = () => {
                       <div className="cuisine_image_inner" style={{ backgroundImage: `url(${dish.image})` }}>
                         <p>{dish.name}</p>
                       </div>
-                      <BiPlus className="fa" />
+                      <BiPlus className="fa_cuisine" />
                     </div>
                     
                   </div>

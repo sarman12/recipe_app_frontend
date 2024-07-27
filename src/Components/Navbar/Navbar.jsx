@@ -48,12 +48,12 @@ function Navbar() {
         </ul>
         <div className="search">
           {visible ? (
-            <MdClose className="fa" onClick={toggleOverlay} />
+            <MdClose className="fa_navbar" onClick={toggleOverlay} />
           ) : (
-            <FaSearch className="fa" onClick={toggleOverlay} />
+            <FaSearch className="fa_navbar" onClick={toggleOverlay} />
           )}
-          <BiCart className="fa" onClick={()=>{navigate('/yourcart')}} />
-          <BiUser onClick={handleUserIconClick} className="fa" />
+          <BiCart className="fa_navbar"/>
+          <BiUser onClick={handleUserIconClick} className="fa_navbar" />
         </div>
       </nav>
       <div className={`overlay ${visible ? 'overlay-visible' : ''}`}>

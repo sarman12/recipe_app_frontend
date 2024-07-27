@@ -26,11 +26,11 @@ function Login() {
       <div className="login_part">
         <h1>Log into your Account</h1>
         <div>
-          <BiUser className='fa' />
+          <BiUser className='fa_login' />
           <input type="email" placeholder='Enter your email.....' />
         </div>
         <div>
-          <PiPassword className='fa' />
+          <PiPassword className='fa_login' />
           <input type="password" placeholder='Enter your Password.....' />
         </div>
         <div className="button">
