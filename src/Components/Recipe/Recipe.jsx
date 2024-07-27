@@ -36,7 +36,6 @@ const Recipe = () => {
     ? 'non-vegetarian'
     : 'cuisine';
 
-  // Handle left arrow click
   const handleLeft = () => {
     if (currentIndex > 0) {
       const prevDish = dishList[currentIndex - 1];
@@ -46,7 +45,6 @@ const Recipe = () => {
     }
   };
 
-  // Handle right arrow click
   const handleRight = () => {
     if (currentIndex < dishList.length - 1) {
       const nextDish = dishList[currentIndex + 1];
@@ -56,7 +54,6 @@ const Recipe = () => {
     }
   };
 
-  // Find the current dish details
   const recipe = dishList.find(dish => dish.name === dishName) || {
     ingredients: ["No data available"],
     recipe: ["No data available"],

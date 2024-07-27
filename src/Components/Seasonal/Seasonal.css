@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
 
 * {
     margin: 0;
@@ -26,59 +25,132 @@ body {
     overflow: hidden;
 }
 
-.seasonal_cuisines h1 {
+.seasonal_header {
+    text-align: center;
+    margin-bottom: 2rem;
+    text-align: left;
+    margin-bottom: 2rem;
+    margin: 0rem 9rem;
+}
+
+.seasonal_header h1 {
     font-size: 2.9rem;
     color: #201e20;
     margin-bottom: 1rem;
-    text-align: center;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 1.5px;
     background-color: transparent;
-    font-weight: 300;
+}
+
+
+.seasonal_header p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-left: 0;
+}
+
+.seasonal_benefits {
+    text-align: center;
+    margin: 2rem 9rem;
+    text-align: left;
+}
+
+.seasonal_benefits h2 {
+    font-size: 2rem;
+    color: #2C3E50;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.seasonal_benefits ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.seasonal_benefits ul li {
+    font-size: 1.2rem;
+    color: #7F8C8D;
+    margin: 10px 0;
 }
 
 .seasonal_cuisine_container {
-    /* border: #201e20 solid 4px; */
     max-width: 1200px;
     margin: auto;
     padding: 1rem;
-    position: relative;
-}
-
-.seasonal_cuisine a {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 2.6rem;
-    font-weight: 500;
-    text-decoration: none;
-    color: #FA2742;
 }
 
 .seasonal_cuisine {
-    margin-bottom: 5rem;
-    padding: 1rem;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
     text-align: left;
-    background-color: #FAFAFA;
-    position: relative;
-    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
 }
 
-.seasonal_cuisine p {
-    font-size: 1rem;
-    color: #666;
-    margin-top: 1rem;
+.seasonal_cuisine_header {
     margin-bottom: 1.5rem;
 }
 
+.seasonal_cuisine_header h2 {
+    font-size: 2rem;
+    color: #2C3E50;
+    margin-bottom: 0.5rem;
+}
+
+.seasonal_cuisine_header p {
+    font-size: 1.1rem;
+    margin-left: 0;
+    color: #7F8C8D;
+}
+
+.seasonal_cuisine_benefits {
+    margin: 1.5rem 0;
+}
+
+.seasonal_cuisine_benefits h3 {
+    font-size: 1.6rem;
+    color: #2C3E50;
+    margin-bottom: 1rem;
+}
+
+.seasonal_cuisine_benefits ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.seasonal_cuisine_benefits ul li {
+    font-size: 1.1rem;
+    color: #7F8C8D;
+    margin: 5px 0;
+}
+
 .seasonal_cuisine_images {
-    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1.5rem;
+}
+
+.seasonal_cuisine_item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+        transition: transform 0.3s ease;
+        background-color: #fff;
+}
+.seasonal_cuisine_item:hover {
+    transform: scale(1.05);
 }
 
 .seasonal_cuisine_image {
     width: 100%;
-    height: 450px;
-    position: relative;
+    height: 300px;
     overflow: hidden;
-    transition: transform 0.5s ease;
+    position: relative;
 }
 
 .seasonal_cuisine_image_inner {
@@ -86,50 +158,32 @@ body {
     background-position: center;
     width: 100%;
     height: 100%;
-    transition: transform 0.5s ease, filter 0.2s ease;
+    transition: transform 0.5s ease, filter 0.3s ease;
     cursor: pointer;
     filter: grayscale(0%);
 }
 
 .seasonal_cuisine_image:hover .seasonal_cuisine_image_inner {
-    transform: scale(1.2);
-    filter: brightness(1) contrast(1.3) saturate(1.2);
-}
-
-.seasonal_cuisine_item {
-    margin-bottom: 3rem;
-    padding: 1rem;
-    text-align: left;
-    background-color: #FAFAFA;
-    position: relative;
-    opacity: 0;
-    transform: scale(0.95);
-    animation: fadeInScale 1s forwards;
-    border-radius: 8px;
-    display: flex;
-    gap: 2rem;
+    transform: scale(1.1);
+    filter: brightness(1.1) contrast(1.2);
 }
 
 .seasonal_cuisine_image p {
-    border: 1px #FA2742 solid;
     position: absolute;
-    top: -100%;
-    left: 30%;
-    width: 70%;
-    background-color: rgba(250, 250, 250, 0.8);
-    color: #FA2742;
-    text-align: center;
-    padding: 20px;
-    font-size: 1rem;
-    transition: top 0.3s ease;
-    z-index: 1;
-    border-radius: 0 0 8px 8px;
-    filter: blur(2px);
+        top: -100%;
+        width: 70%;
+        right: 0;
+        background-color: rgba(250, 250, 250, 0.8);
+        color: #FA2742;
+        text-align: center;
+        padding: 1rem;
+        font-size: 1rem;
+        transition: top 0.3s ease;
+        border-radius: 0 0 8px 8px;
 }
 
 .seasonal_cuisine_image:hover p {
     top: 15%;
-    filter: blur(0);
 }
 
 .seasonal_cuisine_images .fa {
@@ -141,24 +195,30 @@ body {
     bottom: 10px;
     right: 10px;
     transition: background-color 0.3s ease;
-    opacity: 0.9;
-    border-radius: 50px;
+    opacity: 0.8;
+    border-radius: 50%;
     cursor: pointer;
 }
 
 .seasonal_cuisine_images .fa:hover {
     background-color: #FAFAFA;
-    color: #201e20;
+    color: #2C3E50;
 }
 
-@keyframes fadeInScale {
-    from {
-        opacity: 0;
-        transform: scale(0.6);
-    }
+.dish_item_intro {
+    padding: 1rem;
+}
 
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+.dish_name_seasonal {
+    text-decoration: none;
+    color: #2C3E50;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.dish_item_intro p {
+    color: #7F8C8D;
+    font-size: 1.1rem;
+    line-height: 1.6;
 }

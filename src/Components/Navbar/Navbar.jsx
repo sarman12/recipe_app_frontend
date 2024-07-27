@@ -18,12 +18,12 @@ function Navbar() {
   };
 
   const navItems = [
-    { label: 'Trending', options: ['Top 10', 'Top 20', 'Top 30'], link: '/trending' },
-    { label: 'Cuisine', options: ['Indian', 'Chinese', 'Italian', 'Mexican', 'Japanese'], link: '/cuisine' },
-    { label: 'Seasonal', options: ['Summer', 'Winter', 'Spring', 'Rainy'], link: '/seasonal' },
-    { label: 'Seafood', options: ['Shrimp', 'Crab', 'Lobster'], link: '/seafood' },
-    { label: 'Vegan', options: ['Salad', 'Soup', 'Sandwich'], link: '/vegan' },
-    { label: 'Non-vegetarian', options: ['Chicken', 'Beef', 'Pork'], link: '/non-vegetarian' },
+    { label: 'TRENDING', options: ['Top 10', 'Top 20', 'Top 30'], link: '/trending' },
+    { label: 'CUISINE', options: ['Indian', 'Chinese', 'Italian', 'Mexican', 'Japanese'], link: '/cuisine' },
+    { label: 'SEASONAL', options: ['Summer', 'Winter', 'Spring', 'Rainy'], link: '/seasonal' },
+    { label: 'SEAFOOD', options: ['Shrimp', 'Crab', 'Lobster'], link: '/seafood' },
+    { label: 'VEGAN', options: ['Salad', 'Soup', 'Sandwich'], link: '/vegan' },
+    { label: 'NON-VEGETERIAN', options: ['Chicken', 'Beef', 'Pork'], link: '/non-vegetarian' },
   ];
 
   return (
@@ -52,7 +52,7 @@ function Navbar() {
           ) : (
             <FaSearch className="fa" onClick={toggleOverlay} />
           )}
-          <BiCart className="fa" />
+          <BiCart className="fa" onClick={()=>{navigate('/yourcart')}} />
           <BiUser onClick={handleUserIconClick} className="fa" />
         </div>
       </nav>

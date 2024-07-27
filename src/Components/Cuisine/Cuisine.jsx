@@ -162,6 +162,10 @@ const Cuisine = () => {
               {cuisine.dishes.length > 0 ? (
                 cuisine.dishes.map((dish, imgIndex) => (
                   <div key={imgIndex} className="cuisine_dish_item">
+                  <div className="dish_item_intro">
+                      <a className="dish_name">{dish.name}</a>
+                      <p className="dish_intro">{dish.introduction}</p>
+                    </div>
                     <div
                       className="cuisine_image"
                       onClick={() => handleImageClick(cuisine.name, dish.name, dish.image)}
@@ -171,12 +175,7 @@ const Cuisine = () => {
                       </div>
                       <BiPlus className="fa" />
                     </div>
-
-                    <div className="dish_item_intro">
-                      
-                      <a className="dish_name">{dish.name}</a>
-                      <p className="dish_intro">{dish.introduction}</p>
-                    </div>
+                    
                   </div>
                 ))
               ) : (

@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
 
 * {
     margin: 0;
@@ -26,15 +25,54 @@ body {
     overflow: hidden;
 }
 
-.vegan_cuisines h1 {
+.vegan_header {
+    /* border: #201e20 2px solid; */
+    text-align: left;
+    margin-bottom: 2rem;
+    margin: 0rem 9rem;
+}
+
+.vegan_header h1 {
     font-size: 2.9rem;
     color: #201e20;
     margin-bottom: 1rem;
-    text-align: center;
+    /* text-align: center; */
     font-weight: 500;
-    /* font-family: 'Playfair Display', serif; */
     letter-spacing: 1.5px;
     background-color: transparent;
+}
+
+.vegan_header p {
+    
+    font-size: 1.2rem;
+    color: #666;
+    margin-left: 0;
+}
+
+.vegan_benefits {
+    
+    /* border: 2px red solid; */
+    text-align: center;
+    margin: 2rem 9rem;
+    text-align: left;
+}
+
+.vegan_benefits h2 {
+    font-size: 2rem;
+    color: #201e20;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.vegan_benefits ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.vegan_benefits ul li {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 5px 0;
 }
 
 .vegan_cuisine_container {
@@ -42,48 +80,34 @@ body {
     margin: auto;
     padding: 1rem;
     position: relative;
-}
-
-
-
-.vegan_cuisine {
-    /* border: 2px red solid; */
-    margin-bottom: 3rem;
-    padding: 1rem;
-    text-align: left;
-    background-color: #FAFAFA;
-    position: relative;
-    opacity: 0;
-    transform: scale(0.95);
-    animation: fadeInScale 01s forwards;
-    border-radius: 8px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
-.dish_item_intro a{
-    text-decoration: none;
-    color: #201e20;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 2.6rem;
-    margin-left: 1rem;
+
+.vegan_cuisine {
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
-.dish_item_intro p{
-    font-size: 1.1rem;
+
+.vegan_cuisine:hover {
+    transform: scale(1.05);
 }
 
 .vegan_cuisine_images {
-    /* margin-top: 1rem; */
-    display: grid;
+    position: relative;
 }
 
 .vegan_cuisine_image {
-    width: 600px;
-    height: 450px;
-    position: relative;
+    width: 100%;
+    height: 300px;
     overflow: hidden;
-    transition: transform 0.5s ease;
+    position: relative;
 }
-
 
 .vegan_cuisine_image_inner {
     background-size: cover;
@@ -101,29 +125,24 @@ body {
 }
 
 .vegan_cuisine_image p {
-        border: 1px #FA2742 solid;
     position: absolute;
     top: -100%;
-    left: 30%;
     width: 70%;
+    right: 0;
     background-color: rgba(250, 250, 250, 0.8);
     color: #FA2742;
     text-align: center;
-    padding: 20px;
+    padding: 1rem;
     font-size: 1rem;
     transition: top 0.3s ease;
-    z-index: 1;
     border-radius: 0 0 8px 8px;
-    filter: blur(2px);
 }
 
 .vegan_cuisine_image:hover p {
     top: 15%;
-    filter: blur(0);
 }
 
 .vegan_cuisine_images .fa {
-    /* border: 1px #201e20 solid; */
     color: #FFF;
     font-size: 2.5rem;
     background-color: #444;
@@ -133,23 +152,33 @@ body {
     right: 10px;
     transition: background-color 0.3s ease;
     opacity: 0.9;
-    border-radius: 50px;
+    border-radius: 50%;
     cursor: pointer;
 }
 
 .vegan_cuisine_images .fa:hover {
     background-color: #FAFAFA;
-        color: #201e20;
+    color: #201e20;
 }
 
-@keyframes fadeInScale {
-    from {
-        opacity: 0;
-        transform: scale(0.6);
-    }
+.dish_item_intro {
+    padding: 1rem;
+    text-align: left;
+}
 
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+.dish_item_intro a {
+    text-decoration: none;
+    color: #201e20;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: block;
+    margin-left: 0;
+}
+
+.dish_item_intro p {
+    margin-left: 0;
+    font-size: 1rem;
+    color: #666;
 }
