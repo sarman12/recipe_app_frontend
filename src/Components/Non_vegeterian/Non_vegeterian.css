@@ -29,21 +29,28 @@ body {
 .nonvegetarian_cuisines h1 {
     font-size: 2.9rem;
     color: #201e20;
-    margin-bottom: 1rem;
-    text-align: center;
+    /* margin-bottom: 1rem; */
+    text-align: left;
+    margin: 0.5rem 9rem;
     font-weight: 500;
     letter-spacing: 1.5px;
     background-color: transparent;
+}
+.nonvegetarian_cuisines p{
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    margin: 02rem 9rem;
+    margin-top: 1rem;
 }
 
 .nonvegetarian_cuisine_container {
     max-width: 1200px;
     margin: auto;
-    padding: 1rem;
+    padding: 2rem;
     position: relative;
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 2rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.9);    gap: 2rem;
 }
 
 .nonvegetarian_cuisine {
@@ -90,8 +97,8 @@ body {
 }
 
 .nonvegetarian_cuisine_image {
-    width: 100%;
-    height: 300px;
+    width: 550px;
+    height: 250px;
     position: relative;
     overflow: hidden;
     transition: transform 0.5s ease;
@@ -115,9 +122,9 @@ body {
 .nonvegetarian_cuisine_image p {
     position: absolute;
     top: -100%;
-    left: 30%;
+    left: 10%;
     width: 70%;
-    background-color: rgba(250, 250, 250, 0.8);
+    background-color: rgba(250, 250, 250, 0.9);
     color: #FA2742;
     text-align: center;
     padding: 20px;

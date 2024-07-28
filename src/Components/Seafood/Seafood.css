@@ -22,6 +22,7 @@ body {
     font-size: 1.8rem;
     font-weight: 900;
     text-decoration: none;
+    letter-spacing: 1.5px;
     color: #201e20;
 }
 
@@ -36,7 +37,7 @@ body {
 
 .header h1 {
     font-size: 2.9rem;
-    color: #201e20;
+    color: #2C3E50;
     margin-bottom: 1rem;
     text-align: left;
     font-weight: 400;
@@ -55,9 +56,11 @@ body {
 }
 
 .seafood_container {
+    
+    box-shadow: 0 6px 18px #201e20;
     max-width: 1200px;
     margin: auto;
-    padding: 1rem;
+    padding: 2rem;
     position: relative;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -96,8 +99,9 @@ body {
 }
 
 .seafood_image {
-    width: 100%;
-    height: 300px;
+    width: 550px;
+    height: 250px;
+    margin: auto;
     position: relative;
     overflow: hidden;
     transition: transform 0.5s ease;
@@ -123,7 +127,7 @@ body {
     top: -100%;
     left: 30%;
     width: 70%;
-    background-color: rgba(250, 250, 250, 0.8);
+    background-color: rgba(250, 250, 250, 0.9);
     color: #FA2742;
     text-align: center;
     padding: 20px;

@@ -15,6 +15,9 @@ body {
   top: 6rem;
   /* background-image: linear-gradient(to bottom,red,white); */
 }
+h1{
+  color: #2C3E50;
+}
 
 
 p {

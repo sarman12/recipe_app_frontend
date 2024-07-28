@@ -22,6 +22,8 @@ const NonVegetarian = ({ handleAddToCart }) => {
   return (
     <div className="nonvegetarian_cuisines">
       <h1>Popular Non-Vegetarian Dishes</h1>
+            <p>Explore a variety of flavorful and hearty non-vegetarian dishes from around the world. From spiced chicken tikka to classic beef wellington, these dishes are sure to satisfy your taste buds.</p>
+
       <div className="nonvegetarian_cuisine_container">
         {nonvegeterian_dish_list.map((dish, index) => (
           <div key={index} className="nonvegetarian_cuisine" id={dish.name.toLowerCase().replace(/\s+/g, '-')}>
