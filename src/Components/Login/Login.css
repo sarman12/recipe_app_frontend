@@ -13,8 +13,7 @@
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    animation: slide_fade_in 1s forwards;
-}
+        animation: slide_fade 1s forwards;}
 .close_btn{
     position: fixed;
     top: 0rem;
@@ -115,14 +114,3 @@ button{
     cursor: pointer;
 }
 
-
-@keyframes slide_fade_in{
-    from{
-        scale: 0.9;
-        opacity: 0.5;
-    }
-    to{
-        scale: 1;
-        opacity: 1;
-    }
-}

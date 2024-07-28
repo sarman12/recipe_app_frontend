@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Cuisine.css';
+// import { AiOutlineCheck } from 'react-icons/ai';
+useState
 
-import { BiPlus } from 'react-icons/bi';
+import { BiCheckCircle, BiPlus } from 'react-icons/bi';
 
 import I01 from '../../assets/I01.jpg';
 import I02 from '../../assets/I02.jpg';
@@ -146,10 +148,16 @@ const cuisinesData = [
 
 const Cuisine = ({ handleAddToCart }) => {
   const navigate = useNavigate();
+  const [cartItems, setCartItems] = useState(new Set());
 
   const handleImageClick = (cuisineName, dishName, image) => {
     const formattedDishName = dishName.replace(/\s+/g, '-').toLowerCase();
     navigate(`/cuisine/${formattedDishName}/recipe`, { state: { cuisineName, dishName, image } });
+  };
+
+  const handleAddToCartClick = (dish) => {
+    handleAddToCart(dish);
+    setCartItems(prev => new Set(prev).add(dish.name));
   };
 
   return (
@@ -175,10 +183,14 @@ const Cuisine = ({ handleAddToCart }) => {
                       <div className="cuisine_image_inner" style={{ backgroundImage: `url(${dish.image})` }}>
                         <p>{dish.name}</p>
                       </div>
-                      <BiPlus className="fa_cuisine" onClick={(e) => {
-                        e.stopPropagation();
-                        handleAddToCart(dish);
-                      }} />
+                      {cartItems.has(dish.name) ? (
+                        <BiCheckCircle className="fa_cuisine" />
+                      ) : (
+                        <BiPlus className="fa_cuisine" onClick={(e) => {
+                          e.stopPropagation();
+                          handleAddToCartClick(dish);
+                        }} />
+                      )}
                     </div>
                   </div>
                 ))

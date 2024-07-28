@@ -68,6 +68,7 @@ body {
 }
 
 .seafood {
+            animation: slide_fade 1s forwards;
     background-color: #fff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;

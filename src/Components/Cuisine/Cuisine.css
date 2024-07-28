@@ -79,6 +79,7 @@ body {
 
 
 .cuisine_dish_item {
+        animation: slide_fade 1s forwards;
     margin: auto;
     display: flex;
     /* border: 1px red solid; */
@@ -177,4 +178,31 @@ body {
     font-size: 1rem;
     line-height: 1.4;
     width: 60%;
+}
+
+@keyframes slide_fade {
+    from {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.fa_cuisine {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 1.6rem;
+    color: #FAFAFA;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.fa_cuisine:hover {
+    color: #FA2742;
+    transform: scale(1.2);
 }

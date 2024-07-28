@@ -134,6 +134,7 @@ body {
 }
 
 .seasonal_cuisine_item {
+            animation: slide_fade 1s forwards;
     width: 550px;
     margin: auto;
     position: relative;

@@ -7,23 +7,23 @@ import Logo from '../../assets/FoodHunt Logo.jpg'; // Adjust path if necessary
 
 function Footer() {
   const footerSections = [
-    ['Trending', 'Cuisines', 'Seasonal', 'Seafood', 'Vegan', 'Non-vegetarian'],
+    ['Trending', 'Cuisine', 'Seasonal', 'Seafood', 'Vegan', 'Non-vegetarian'],
     ['Home', 'About Us', 'Contact Us', 'Blogs'],
     ['Terms of Service', 'Privacy Policy']
   ];
 
   return (
-    <footer>
-      <div className="footer_container">
-        <div>
-          <img src={Logo} alt="Food Hunt Logo" className="footer_logo" />
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-logo-container">
+          <img src={Logo} alt="Food Hunt Logo" className="footer-logo" />
         </div>
-        <div className="navigation_container">
+        <div className="footer-navigation">
           {footerSections.map((section, index) => (
-            <div key={index} className="footer_content">
+            <div key={index} className="footer-section">
               <ul>
                 {section.map(item => (
-                  <li key={item}>{item}</li>
+                  <li key={item}><a href={`/${item.toLowerCase().replace(/ /g, '-')}`}>{item}</a></li>
                 ))}
               </ul>
             </div>
@@ -31,17 +31,17 @@ function Footer() {
         </div>
       </div>
 
-      <div className="footer_social">
+      <div className="footer-social">
         <h2>Connect With Us</h2>
-        <div>
-          <BsLinkedin className="fa_footer" />
-          <FaFacebook className="fa_footer" />
-          <FaGithub className="fa_footer" />
-          <BsTwitter className="fa_footer" />
-          <ImInstagram className="fa_footer" />
+        <div className="footer-social-icons">
+          <BsLinkedin className="fa-footer" />
+          <FaFacebook className="fa-footer" />
+          <FaGithub className="fa-footer" />
+          <BsTwitter className="fa-footer" />
+          <ImInstagram className="fa-footer" />
         </div>
       </div>
-      <div className="footer_copywrite">
+      <div className="footer-copywrite">
         © 2024 Food Hunt Pvt Ltd. All Rights Reserved
       </div>
     </footer>

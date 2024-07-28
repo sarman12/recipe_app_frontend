@@ -1,6 +1,7 @@
 .cart_container {
     padding: 20px;
     margin: 2rem 9rem;
+            animation: slide_fade 1s forwards;
 }
 .cart_container h1{
     text-align: center;
