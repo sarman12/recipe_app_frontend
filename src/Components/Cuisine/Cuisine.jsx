@@ -1,7 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Cuisine.css';
+
 import { BiPlus } from 'react-icons/bi';
+
 import I01 from '../../assets/I01.jpg';
 import I02 from '../../assets/I02.jpg';
 import I03 from '../../assets/I03.jpg';
@@ -116,33 +118,33 @@ const cuisinesData = [
       { name: "Gnocchi", image: IT08, introduction: "Soft dumplings made from potatoes, flour, and eggs, served with various sauces." },
       { name: "Pizza", image: IT09,introduction:"made with love"},
       { name: "Pizza", image: IT09, introduction: "A globally popular dish originating from Italy, with a variety of toppings." },
-      { name: "Arancini", image: IT10, introduction: "Deep-fried rice balls stuffed with meat, cheese, or vegetables." },
-      { name: "Ravioli", image: IT11, introduction: "Pasta pockets filled with meat, cheese, or vegetables, served with sauce." },
-      { name: "Spaghetti alle Vongole", image: IT12, introduction: "Spaghetti with clams, a classic Italian seafood dish." },
-      { name: "Trofie al Pesto", image: IT13, introduction: "A Ligurian pasta dish made with basil pesto sauce." },
-      { name: "Lasagna", image: IT14, introduction: "Layered pasta with meat, cheese, and tomato sauce, baked to perfection." },
-      { name: "Caprese Salad", image: IT15, introduction: "A simple salad made with fresh tomatoes, mozzarella, and basil." },
+      { name: "Arancini", image: IT10, introduction: "Deep-fried rice balls filled with meat, cheese, or vegetables." },
+      { name: "Ossobuco", image: IT11, introduction: "A Milanese specialty of braised veal shanks with vegetables and broth." },
+      { name: "Lasagna", image: IT12, introduction: "A layered pasta dish with meat, cheese, and tomato sauce." },
+      { name: "Caprese Salad", image: IT13, introduction: "A simple salad of fresh tomatoes, mozzarella cheese, and basil." },
+      { name: "Pesto Pasta", image: IT14, introduction: "Pasta tossed with a sauce made from basil, garlic, pine nuts, and Parmesan." },
+      { name: "Biscotti", image: IT15, introduction: "Crunchy almond cookies, often enjoyed with coffee or dessert wine." },
     ],
   },
   {
     name: "Mexican Cuisine",
-    description: "Mexican cuisine is known for its bold flavors, colorful presentations, and variety of spices and ingredients.",
+    description: "Mexican cuisine is known for its bold flavors and vibrant colors, often incorporating a variety of spices and fresh ingredients.",
     dishes: [
-      { name: "Taco", image: M01, introduction: "A traditional Mexican dish consisting of a folded or rolled tortilla filled with various ingredients." },
-      { name: "Burritos", image: M02, introduction: "A large flour tortilla filled with meat, beans, rice, and other ingredients, then rolled up." },
-      { name: "Quesadillas", image: M03, introduction: "A grilled tortilla filled with cheese and other ingredients, folded in half." },
-      { name: "Chilaquiles", image: M04, introduction: "A breakfast dish made with tortilla chips, salsa, and various toppings." },
-      { name: "Pico De Gallo", image: M05, introduction: "A fresh salsa made with chopped tomatoes, onions, cilantro, and lime juice." },
-      { name: "Guacamole", image: M06, introduction: "A creamy dip made from mashed avocados, lime juice, onions, and tomatoes." },
-      { name: "Enchiladas", image: M07, introduction: "Corn tortillas rolled around a filling and covered with chili sauce." },
-      { name: "Tostada", image: M08, introduction: "A flat or bowl-shaped tortilla that is deep-fried or toasted." },
-      { name: "Mole", image: M09, introduction: "A rich sauce made from various ingredients including chili peppers and chocolate." },
-      { name: "Salsa", image: M10, introduction: "A variety of sauces used as condiments, made from tomatoes, chili peppers, and other ingredients." },
+      { name: "Chiles en Nogada", image: M01, introduction: "A traditional dish of stuffed peppers in a creamy walnut sauce." },
+      { name: "Mole Poblano", image: M02, introduction: "A rich, dark sauce made with chocolate, spices, and chili peppers." },
+      { name: "Pozole", image: M03, introduction: "A hearty soup made with hominy, meat, and various seasonings." },
+      { name: "Tamales", image: M04, introduction: "Masa dough filled with meat or beans, wrapped in corn husks and steamed." },
+      { name: "Tacos", image: M05, introduction: "Soft or crispy tortillas filled with a variety of meats, vegetables, and salsas." },
+      { name: "Guacamole", image: M06, introduction: "A creamy dip made from mashed avocados, lime juice, and seasonings." },
+      { name: "Quesadillas", image: M07, introduction: "Tortillas filled with cheese and other ingredients, then grilled." },
+      { name: "Elote", image: M08, introduction: "Grilled corn on the cob, typically served with lime, cheese, and chili powder." },
+      { name: "Churros", image: M09, introduction: "Deep-fried dough pastries, often coated in cinnamon sugar and served with chocolate." },
+      { name: "Enchiladas", image: M10, introduction: "Tortillas rolled around a filling and covered with a chili pepper sauce." },
     ],
   },
 ];
 
-const Cuisine = () => {
+const Cuisine = ({ handleAddToCart }) => {
   const navigate = useNavigate();
 
   const handleImageClick = (cuisineName, dishName, image) => {
@@ -155,16 +157,16 @@ const Cuisine = () => {
       <h1>Popular Cuisines</h1>
       <div className="cuisine_container">
         {cuisinesData.map((cuisine, index) => (
-          <div key={index} className="cuisine" id={cuisine.name.toLowerCase().replace(/\s+/g, '-')}>
-            <a href={`#${cuisine.name.toLowerCase().replace(/\s+/g, '-')}`}>{cuisine.name}</a>
+          <div key={index} className="cuisine">
+            <h2>{cuisine.name}</h2>
             <p>{cuisine.description}</p>
             <div className="cuisine_images">
               {cuisine.dishes.length > 0 ? (
                 cuisine.dishes.map((dish, imgIndex) => (
                   <div key={imgIndex} className="cuisine_dish_item">
-                  <div className="dish_item_intro">
-                      <a className="dish_name">{dish.name}</a>
-                      <p className="dish_intro">{dish.introduction}</p>
+                    <div className="dish_item_intro">
+                      <a className="dish_name_cuisine">{dish.name}</a>
+                      <p className="dish_intro_cuisine">{dish.introduction}</p>
                     </div>
                     <div
                       className="cuisine_image"
@@ -173,9 +175,11 @@ const Cuisine = () => {
                       <div className="cuisine_image_inner" style={{ backgroundImage: `url(${dish.image})` }}>
                         <p>{dish.name}</p>
                       </div>
-                      <BiPlus className="fa_cuisine" />
+                      <BiPlus className="fa_cuisine" onClick={(e) => {
+                        e.stopPropagation();
+                        handleAddToCart(dish);
+                      }} />
                     </div>
-                    
                   </div>
                 ))
               ) : (

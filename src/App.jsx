@@ -13,25 +13,37 @@ import Special from './Components/Special_menu/Special';
 import Vegan from './Components/Vegan/Vegan';
 import Seafood from './Components/Seafood/Seafood';
 import NonVegetarian from './Components/Non_vegeterian/Non_vegeterian';
-// import Addtocart from './Components/Add_to_cart/Add_to_cart';
+import Add_to_cart from './Components/Add_to_cart/Add_to_cart';
 
 function App() {
   const [active, setActive] = React.useState(false);
   const togglenav = () => setActive(!active);
+
+  const [cart, setCart] = React.useState([]);
+
+  const handleAddToCart = (dish) => {
+    setCart([...cart, dish]);
+  };
+
+  const handleRemoveFromCart = (index) => {
+    const newCart = [...cart];
+    newCart.splice(index, 1);
+    setCart(newCart);
+  };
 
   return (
     <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/cuisine" element={<Cuisine />} />
-        <Route path="/seasonal" element={<Seasonal />} />
+        <Route path="/cuisine" element={<Cuisine handleAddToCart={handleAddToCart} />} />
+        <Route path="/seasonal" element={<Seasonal handleAddToCart={handleAddToCart} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Sign_up />} />
-        <Route path="/vegan" element={<Vegan />} />
-        <Route path="/seafood" element={<Seafood />} />
-        <Route path="/non-vegetarian" element={<NonVegetarian />} />
-        {/* <Route path="/yourcart" element={<Addtocart />} /> */}
+        <Route path="/vegan" element={<Vegan handleAddToCart={handleAddToCart} />} />
+        <Route path="/seafood" element={<Seafood handleAddToCart={handleAddToCart} />} />
+        <Route path="/non-vegetarian" element={<NonVegetarian handleAddToCart={handleAddToCart} />} />
+        <Route path="/yourcart" element={<Add_to_cart cartItems={cart} handleRemoveFromCart={handleRemoveFromCart} />} />
         <Route path="/non-vegetarian/:dish/recipe" element={<Recipe />} />
         <Route path="/cuisine/:dish/recipe" element={<Recipe />} />
         <Route path="/seasonal/:dish/recipe" element={<Recipe />} />

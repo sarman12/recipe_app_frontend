@@ -1,0 +1,96 @@
+.cart_container {
+    padding: 20px;
+    margin: 2rem 9rem;
+}
+.cart_container h1{
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.cart_content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.add_items {
+    /* border: 2px red solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 2px dashed #202020;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.add_recipe_btn {
+    font-size: 36px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.add_recipe_text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.add_recipe_instruction {
+    font-size: 14px;
+    color: #777;
+}
+
+.cart_items_container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+}
+
+.cart_recipes {
+    position: relative;
+    /* border: 2px red solid; */
+    display: flex;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+
+.fa_cart_close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    cursor: pointer;
+    /* margin-right: 10px; */
+    color: #201e20;
+}
+
+.cart_recipe_item {
+    padding: 10px;
+    gap: 10px;
+}
+
+.cart_recipe_image {
+    width: 330px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.cart_recipe_details {
+    gap: 5px;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.cart_dish_name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cart_dish_intro {
+    font-size: 16px;
+}
+    

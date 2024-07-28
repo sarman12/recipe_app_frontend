@@ -4,7 +4,7 @@ import './Vegan.css';
 import { BiPlus } from 'react-icons/bi';
 import { vegan_dish_list } from '../Vegan_dish_list'; // Ensure this path is correct
 
-const Vegan = () => {
+const Vegan = ({ handleAddToCart }) => {
   const navigate = useNavigate();
 
   const handleImageClick = (dishName, image) => {
@@ -30,7 +30,7 @@ const Vegan = () => {
       <div className="vegan_cuisine_container">
         {vegan_dish_list.map((dish, index) => (
           <div key={index} className="vegan_cuisine" id={dish.name.toLowerCase().replace(/\s+/g, '-')}>
-          <div className="dish_item_intro">
+            <div className="dish_item_intro">
               <a href={`#${dish.name.toLowerCase().replace(/\s+/g, '-')}`}>{dish.name}</a>
               <p>{dish.ingredients}</p>
             </div>
@@ -42,10 +42,12 @@ const Vegan = () => {
                 <div className="vegan_cuisine_image_inner" style={{ backgroundImage: `url(${dish.image})` }}>
                   <p>{dish.name}</p>
                 </div>
-                <BiPlus className="fa" />
+                <BiPlus className="fa" onClick={(e) => {
+                  e.stopPropagation();
+                  handleAddToCart(dish);
+                }} />
               </div>
             </div>
-            
           </div>
         ))}
       </div>

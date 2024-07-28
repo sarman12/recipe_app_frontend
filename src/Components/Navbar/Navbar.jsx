@@ -52,7 +52,7 @@ function Navbar() {
           ) : (
             <FaSearch className="fa_navbar" onClick={toggleOverlay} />
           )}
-          <BiCart className="fa_navbar"/>
+          <BiCart className="fa_navbar" onClick={()=>{navigate('/yourcart')}} />
           <BiUser onClick={handleUserIconClick} className="fa_navbar" />
         </div>
       </nav>

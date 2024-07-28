@@ -117,13 +117,14 @@ body {
         top: -100%;
         width: 70%;
         right: 0;
-        background-color: rgba(205, 196, 196, 0.8);
+        background-color: rgba(205, 196, 196, 0.9);
         color: #FA2742;
         text-align: center;
         padding: 1rem;
         font-size: 1rem;
         transition: top 0.3s ease;
         border-radius: 0 0 8px 8px;
+        
 }
 
 .cuisine_image:hover p {
@@ -152,7 +153,7 @@ body {
     padding: 1rem;
 }
 
-.dish_name {
+.dish_name_cuisine {
     text-decoration: none;
     color: #2C3E50;
     font-family: 'Playfair Display', serif;
@@ -162,8 +163,9 @@ body {
     margin-bottom: 0.5rem;
 }
 
-.dish_intro {
+.dish_intro_cuisine {
     color: #7F8C8D;
     font-size: 1rem;
     line-height: 1.4;
+    width: 60%;
 }

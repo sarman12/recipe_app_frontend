@@ -16,69 +16,69 @@ import Surf_and_Turf_US from '../../assets/FishDish/dish_9.jpg';
 import Tuna_Tartare_USA from '../../assets/FishDish/dish_10.jpg';
 
 const seafoodDishList = [
-    {
-        name: "Bouillabaisse (France)",
-        description: "A traditional French seafood stew made with various fish and shellfish.",
-        images: [Bouillabaisse_France],
-        name_of_dishes: ["Bouillabaisse"]
-    },
-    {
-        name: "Ceviche (Peru)",
-        description: "A popular Peruvian dish made from fresh fish marinated in citrus juices.",
-        images: [Ceviche_Peru],
-        name_of_dishes: ["Ceviche"]
-    },
-    {
-        name: "Crab Cakes (US)",
-        description: "Delicious crab cakes made with crab meat, mayonnaise, and breadcrumbs.",
-        images: [Crab_Cakes_US],
-        name_of_dishes: ["Crab Cakes"]
-    },
-    {
-        name: "Fish and Chips (UK)",
-        description: "Classic British dish of battered fish served with crispy chips.",
-        images: [Fish_and_Chips_UK],
-        name_of_dishes: ["Fish and Chips"]
-    },
-    {
-        name: "Grilled Sardines (Portugal)",
-        description: "Grilled sardines seasoned with garlic and parsley.",
-        images: [Grilled_Sardines_Portugal],
-        name_of_dishes: ["Grilled Sardines"]
-    },
-    {
-        name: "Oysters Rockefeller (USA)",
-        description: "Oysters topped with a rich mixture of butter, spinach, and Parmesan cheese.",
-        images: [Oysters_Rockefellers_USA],
-        name_of_dishes: ["Oysters Rockefeller"]
-    },
-    {
-        name: "Paella de Marisco (Spain)",
-        description: "Spanish seafood paella made with a variety of seafood and saffron rice.",
-        images: [Paella_de_Marisco_Spain],
-        name_of_dishes: ["Paella de Marisco"]
-    },
-    {
-        name: "Risotto ai Frutti di Mare (Italy)",
-        description: "Italian seafood risotto made with Arborio rice and a mix of seafood.",
-        images: [Risotta_ai_Frutti_di_Mare_Italy],
-        name_of_dishes: ["Risotto ai Frutti di Mare"]
-    },
-    {
-        name: "Surf and Turf (US)",
-        description: "A hearty dish combining steak and lobster tails.",
-        images: [Surf_and_Turf_US],
-        name_of_dishes: ["Surf and Turf"]
-    },
-    {
-        name: "Tuna Tartare (USA)",
-        description: "Fresh tuna mixed with sesame oil and lime juice, served as a tartare.",
-        images: [Tuna_Tartare_USA],
-        name_of_dishes: ["Tuna Tartare"]
-    }
+  {
+    name: "Bouillabaisse (France)",
+    description: "A traditional French seafood stew made with various fish and shellfish.",
+    images: [Bouillabaisse_France],
+    name_of_dishes: ["Bouillabaisse"]
+  },
+  {
+    name: "Ceviche (Peru)",
+    description: "A popular Peruvian dish made from fresh fish marinated in citrus juices.",
+    images: [Ceviche_Peru],
+    name_of_dishes: ["Ceviche"]
+  },
+  {
+    name: "Crab Cakes (US)",
+    description: "Delicious crab cakes made with crab meat, mayonnaise, and breadcrumbs.",
+    images: [Crab_Cakes_US],
+    name_of_dishes: ["Crab Cakes"]
+  },
+  {
+    name: "Fish and Chips (UK)",
+    description: "Classic British dish of battered fish served with crispy chips.",
+    images: [Fish_and_Chips_UK],
+    name_of_dishes: ["Fish and Chips"]
+  },
+  {
+    name: "Grilled Sardines (Portugal)",
+    description: "Grilled sardines seasoned with garlic and parsley.",
+    images: [Grilled_Sardines_Portugal],
+    name_of_dishes: ["Grilled Sardines"]
+  },
+  {
+    name: "Oysters Rockefeller (USA)",
+    description: "Oysters topped with a rich mixture of butter, spinach, and Parmesan cheese.",
+    images: [Oysters_Rockefellers_USA],
+    name_of_dishes: ["Oysters Rockefeller"]
+  },
+  {
+    name: "Paella de Marisco (Spain)",
+    description: "Spanish seafood paella made with a variety of seafood and saffron rice.",
+    images: [Paella_de_Marisco_Spain],
+    name_of_dishes: ["Paella de Marisco"]
+  },
+  {
+    name: "Risotto ai Frutti di Mare (Italy)",
+    description: "Italian seafood risotto made with Arborio rice and a mix of seafood.",
+    images: [Risotta_ai_Frutti_di_Mare_Italy],
+    name_of_dishes: ["Risotto ai Frutti di Mare"]
+  },
+  {
+    name: "Surf and Turf (US)",
+    description: "A hearty dish combining steak and lobster tails.",
+    images: [Surf_and_Turf_US],
+    name_of_dishes: ["Surf and Turf"]
+  },
+  {
+    name: "Tuna Tartare (USA)",
+    description: "Fresh tuna mixed with sesame oil and lime juice, served as a tartare.",
+    images: [Tuna_Tartare_USA],
+    name_of_dishes: ["Tuna Tartare"]
+  }
 ];
 
-const Seafood = () => {
+const Seafood = ({ handleAddToCart }) => {
   const navigate = useNavigate();
 
   const handleImageClick = (dishName, image) => {
@@ -110,14 +110,16 @@ const Seafood = () => {
                     <div className="seafood_image_inner" style={{ backgroundImage: `url(${image})` }}>
                       <p>{dish.name_of_dishes[imgIndex]}</p>
                     </div>
-                    <BiPlus className="fa" />
+                    <BiPlus className="fa" onClick={(e) => {
+                        e.stopPropagation();
+                        handleAddToCart(dish);
+                    }} />
                   </div>
                 ))
               ) : (
                 <p>No dishes available</p>
               )}
             </div>
-            
           </div>
         ))}
       </div>

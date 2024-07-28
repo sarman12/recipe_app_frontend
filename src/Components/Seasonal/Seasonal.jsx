@@ -37,7 +37,7 @@ const seasonData = [
   },
 ];
 
-const Seasonal = () => {
+const Seasonal = ({ handleAddToCart }) => {
   const navigate = useNavigate();
 
   const handleImageClick = (dishName, image) => {
@@ -91,9 +91,11 @@ const Seasonal = () => {
                     <div className="seasonal_cuisine_image_inner" style={{ backgroundImage: `url(${dish.image})` }}>
                       <p>{dish.name}</p>
                     </div>
-                    <BiPlus className="fa" />
+                    <BiPlus className="fa" onClick={(e) => {
+                      e.stopPropagation();
+                      handleAddToCart(dish);
+                    }} />
                   </div>
-                  
                 </div>
               ))}
             </div>
