@@ -28,7 +28,7 @@ body {
 
 .nonvegetarian_cuisines h1 {
     font-size: 2.9rem;
-    color: #201e20;
+    color: #2C3E50;
     /* margin-bottom: 1rem; */
     text-align: left;
     margin: 0.5rem 9rem;
@@ -63,7 +63,7 @@ body {
 }
 
 .nonvegetarian_cuisine:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -98,7 +98,7 @@ body {
 
 .nonvegetarian_cuisine_image {
     width: 550px;
-    height: 250px;
+    height: 280px;
     position: relative;
     overflow: hidden;
     transition: transform 0.5s ease;

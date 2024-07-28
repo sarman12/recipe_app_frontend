@@ -72,9 +72,17 @@ const Recipe = () => {
           </div>
           <div className="recipe_description">
             <h4>Ingredients:</h4>
-            <p>{Array.isArray(recipe.ingredients) ? recipe.ingredients.join(', ') : recipe.ingredients}</p>
+            <ul>
+              {Array.isArray(recipe.ingredients) ? recipe.ingredients.map((ingredient, index) => (
+                <li key={index}>{ingredient}</li>
+              )) : <li>{recipe.ingredients}</li>}
+            </ul>
             <h4>Recipe:</h4>
-            <p>{Array.isArray(recipe.recipe) ? recipe.recipe.join(', ') : recipe.recipe}</p>
+            <ol>
+              {Array.isArray(recipe.recipe) ? recipe.recipe.map((step, index) => (
+                <li key={index}>{step}</li>
+              )) : <li>{recipe.recipe}</li>}
+            </ol>
           </div>
         </div>
       </div>

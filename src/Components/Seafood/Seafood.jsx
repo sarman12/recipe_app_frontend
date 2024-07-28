@@ -112,7 +112,11 @@ const Seafood = ({ handleAddToCart }) => {
                     </div>
                     <BiPlus className="fa" onClick={(e) => {
                         e.stopPropagation();
-                        handleAddToCart(dish);
+                        handleAddToCart({
+                          ...dish,
+                          image: image,
+                          introduction: dish.description // Assuming introduction is same as description
+                        });
                     }} />
                   </div>
                 ))

@@ -6,9 +6,21 @@ import { useNavigate } from 'react-router-dom';
 function Add_to_cart({ cartItems, handleRemoveFromCart }) {
   const navigate = useNavigate();
 
+  const handleImageClick = (dish) => {
+    const baseUrl = dish.category.toLowerCase().replace(/\s+/g, '-');
+    navigate(`/${baseUrl}/${dish.name.replace(/\s+/g, '-').toLowerCase()}/recipe`, {
+      state: {
+        cuisineName: dish.cuisineName,
+        dishName: dish.name,
+        image: dish.image,
+        category: dish.category,
+      },
+    });
+  };
+
   return (
     <div className="cart_container">
-      <h1>Your Cart</h1>
+      <h1>Your Saved Recipes</h1>
       <div className="cart_content">
         <div className="add_items">
           <CgMathPlus className="add_recipe_btn" onClick={() => navigate('/cuisine')} />
@@ -28,7 +40,11 @@ function Add_to_cart({ cartItems, handleRemoveFromCart }) {
                     <span className="cart_dish_name">{dish.name}</span>
                     <p className="cart_dish_intro">{dish.introduction}</p>
                   </div>
-                  <div className="cart_recipe_image" style={{ backgroundImage: `url(${dish.image})` }}></div>
+                  <div
+                    className="cart_recipe_image"
+                    style={{ backgroundImage: `url(${dish.image})` }}
+                    onClick={() => handleImageClick(dish)}
+                  ></div>
                 </div>
               </div>
             ))}
