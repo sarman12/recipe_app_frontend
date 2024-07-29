@@ -3,7 +3,7 @@ import './Footer.css';
 import { BsLinkedin, BsTwitter } from 'react-icons/bs';
 import { FaFacebook, FaGithub } from 'react-icons/fa';
 import { ImInstagram } from 'react-icons/im';
-import Logo from '../../assets/FoodHunt Logo.jpg'; // Adjust path if necessary
+import Logo from '../../assets/logo.png'; // Adjust path if necessary
 
 function Footer() {
   const footerSections = [

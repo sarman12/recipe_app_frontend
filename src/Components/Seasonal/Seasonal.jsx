@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BiPlus } from 'react-icons/bi';
+import { BiPlus, BiCheckCircle } from 'react-icons/bi';
 import './Seasonal.css';
 import { seasonalDishList } from '../Seasonal_dish_list'; // Adjust the path as necessary
 
@@ -39,12 +39,18 @@ const seasonData = [
 
 const Seasonal = ({ handleAddToCart }) => {
   const navigate = useNavigate();
+  const [cartItems, setCartItems] = useState(new Set());
 
   const handleImageClick = (dishName, image) => {
     const formattedDishName = dishName.replace(/\s+/g, '-').toLowerCase();
     navigate(`/seasonal/${formattedDishName}/recipe`, {
       state: { cuisineName: 'Seasonal Cuisine', dishName, image, category: 'Seasonal' },
     });
+  };
+
+  const handleAddToCartClick = (dish) => {
+    handleAddToCart(dish);
+    setCartItems(prev => new Set(prev).add(dish.name));
   };
 
   return (
@@ -91,10 +97,14 @@ const Seasonal = ({ handleAddToCart }) => {
                     <div className="seasonal_cuisine_image_inner" style={{ backgroundImage: `url(${dish.image})` }}>
                       <p>{dish.name}</p>
                     </div>
-                    <BiPlus className="fa" onClick={(e) => {
-                      e.stopPropagation();
-                      handleAddToCart(dish);
-                    }} />
+                    {cartItems.has(dish.name) ? (
+                      <BiCheckCircle className="fa" />
+                    ) : (
+                      <BiPlus className="fa" onClick={(e) => {
+                        e.stopPropagation();
+                        handleAddToCartClick(dish);
+                      }} />
+                    )}
                   </div>
                 </div>
               ))}

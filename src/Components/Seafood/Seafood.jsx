@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Seafood.css';
-import { BiPlus } from 'react-icons/bi';
+import { BiPlus, BiCheckCircle } from 'react-icons/bi';
 
 // Import seafood images
 import Bouillabaisse_France from '../../assets/FishDish/Dish_1.jpg';
@@ -80,10 +80,16 @@ const seafoodDishList = [
 
 const Seafood = ({ handleAddToCart }) => {
   const navigate = useNavigate();
+  const [cartItems, setCartItems] = useState(new Set());
 
   const handleImageClick = (dishName, image) => {
     const formattedDishName = dishName.replace(/\s+/g, '-').toLowerCase();
     navigate(`/seafood/${formattedDishName}/recipe`, { state: { dishName, image, category: 'Seafood' } });
+  };
+
+  const handleAddToCartClick = (dish) => {
+    handleAddToCart(dish);
+    setCartItems(prev => new Set(prev).add(dish.name));
   };
 
   return (
@@ -110,14 +116,18 @@ const Seafood = ({ handleAddToCart }) => {
                     <div className="seafood_image_inner" style={{ backgroundImage: `url(${image})` }}>
                       <p>{dish.name_of_dishes[imgIndex]}</p>
                     </div>
-                    <BiPlus className="fa" onClick={(e) => {
+                    {cartItems.has(dish.name) ? (
+                      <BiCheckCircle className="fa" />
+                    ) : (
+                      <BiPlus className="fa" onClick={(e) => {
                         e.stopPropagation();
-                        handleAddToCart({
+                        handleAddToCartClick({
                           ...dish,
                           image: image,
                           introduction: dish.description // Assuming introduction is same as description
                         });
-                    }} />
+                      }} />
+                    )}
                   </div>
                 ))
               ) : (

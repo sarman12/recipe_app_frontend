@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    /* background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+}
+
+.mains {
+    padding: 2rem;
+    /* background-color: #FAFAFA; */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mains h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    color: #2C3E50;
+}
+
+.main_container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.main {
+    /* background-color: #FFFFFF; */
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.9);
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+}
+
+
+.main p {
+    color: #201e20;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.main a {
+    display: block;
+    color: #2C3E50;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+    margin-left: 1rem;
+}
+
+.main a:hover {
+    color: #FA2742;
+    /* Color change on hover */
+    border-bottom: 2px solid #FA2742;
+    /* Underline effect on hover */
+}
+
+.main_images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+
+.main_dish_item {
+    animation: slide_fade 1s forwards;
+    margin: auto;
+    display: flex;
+    /* border: 1px red solid; */
+    width: 550px;
+    flex-direction: column;
+    border: 2px solid #ddd;
+    /* Border around each dish item */
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.main_dish_item:hover {
+    transform: scale(1.05);
+}
+
+.main_image {
+    width: 550px;
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+    /* Adjust height as needed */
+    background-color: #ddd;
+}
+
+.main_image_inner {
+    width: 100%;
+    width: 550px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease, filter 0.3s ease;
+    filter: grayscale(0%);
+}
+
+.main_image:hover .main_image_inner {
+    transform: scale(1.1);
+    filter: brightness(1.1) contrast(1.2);
+}
+
+.main_image p {
+    position: absolute;
+    top: -100%;
+    width: 70%;
+    right: 0;
+    background-color: rgba(205, 196, 196, 0.9);
+    color: #FA2742;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+    transition: top 0.3s ease;
+    border-radius: 0 0 8px 8px;
+
+}
+
+.main_image:hover p {
+    top: 15%;
+}
+
+.fa_main {
+    color: #FFF;
+    font-size: 2.3rem;
+    background-color: #444;
+    padding: 0.3rem;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    transition: background-color 0.3s ease;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.fa_main:hover {
+    background-color: #FAFAFA;
+    color: #2C3E50;
+}
+
+.dish_item_intro {
+    /* margin-top: 10px; */
+    padding: 1rem;
+    background-color: #FAFAFA;
+}
+
+.dish_name_main {
+    text-decoration: none;
+    color: #2C3E50;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.dish_intro_main {
+    color: #7F8C8D;
+    font-size: 1rem;
+    line-height: 1.4;
+    width: 60%;
+}
+
+@keyframes slide_fade {
+    from {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.fa_main {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 1.6rem;
+    color: #FAFAFA;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.fa_main:hover {
+    color: #FA2742;
+    transform: scale(1.2);
+}

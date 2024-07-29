@@ -21,11 +21,15 @@
 }
 
 .footer-logo-container {
-    flex: 1;
+    flex: 2;
 }
 
 .footer-logo {
-    max-width: 150px;
+    margin-left: -8rem;
+    max-width: 400px;
+
+    /* border: 2px red solid; */
+    border-radius: 40%;
     opacity: 0.8;
     transition: opacity 0.3s ease;
 }
@@ -35,9 +39,10 @@
 }
 
 .footer-navigation {
+    margin-top: 3rem;
     display: flex;
     justify-content: space-between;
-    flex: 3;
+    flex: 2;
     gap: 3rem;
 }
 
@@ -76,7 +81,7 @@
 .footer-social-icons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap:2rem;
 }
 
 .fa-footer {
@@ -93,7 +98,7 @@
 
 .footer-copywrite {
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem;
     background-color: #222;
     color: #777;
     font-size: 0.9rem;

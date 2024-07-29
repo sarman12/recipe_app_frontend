@@ -66,7 +66,7 @@ import M10 from '../../assets/M010.jpg';
 
 const cuisinesData = [
   {
-    name: "Indian Cuisine",
+    name: "Indian cuisine",
     description: "Indian cuisine is known for its vibrant spices, fresh herbs, and wide variety of rich flavors.",
     dishes: [
       { name: "Litti Chokha", image: I01, introduction: "A traditional dish from Bihar made with wheat and gram flour." },
@@ -91,7 +91,7 @@ const cuisinesData = [
     ],
   },
   {
-    name: "Chinese Cuisine",
+    name: "Chinese cuisine",
     description: "Chinese cuisine offers a range of flavors and techniques, from stir-frying and steaming to braising and baking.",
     dishes: [
       { name: "Kung Pulao Chicken", image: C01, introduction: "A spicy and flavorful chicken dish with a mix of rice and vegetables." },
@@ -107,7 +107,7 @@ const cuisinesData = [
     ],
   },
   {
-    name: "Italian Cuisine",
+    name: "Italian cuisine",
     description: "Italian cuisine is celebrated for its regional diversity, especially between the north and the south of the Italian Peninsula.",
     dishes: [
       { name: "Emilia-Romagna", image: IT01, introduction: "A rich region in northern Italy, known for its pasta and cheese dishes." },

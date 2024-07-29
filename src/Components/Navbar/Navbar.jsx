@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import { FaSearch } from 'react-icons/fa';
 import { MdClose } from 'react-icons/md';
-import { BiCart, BiUser } from 'react-icons/bi';
+import { BiCart, BiFridge, BiSolidFridge, BiUser } from 'react-icons/bi';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Navbar() {
@@ -51,7 +51,7 @@ function Navbar() {
           ) : (
             <FaSearch className="fa_navbar" onClick={toggleOverlay} />
           )}
-          <BiCart className="fa_navbar" onClick={() => {navigate('/yourcart')}} />
+          <BiSolidFridge className='fa_navbar' onClick={() => {navigate('/yourcart')}}/>
           <BiUser onClick={handleUserIconClick} className="fa_navbar" />
         </div>
       </nav>
